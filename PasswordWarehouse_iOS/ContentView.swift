@@ -32,6 +32,26 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button(action: addItem) {
+                        VStack {
+                            Image(systemName: "magnifyingglass")
+                            Text("Search")
+                        }
+                    }
+                    Button(action: addItem) {
+                        VStack {
+                            Image(systemName: "arrow.clockwise")
+                            Text("Generate")
+                        }
+                    }
+                    Button(action: addItem) {
+                        VStack {
+                            Image(systemName: "gear")
+                            Text("Backup & Restore")
+                        }
+                    }
+                }
 #endif
                 ToolbarItem {
                     Button(action: addItem) {
