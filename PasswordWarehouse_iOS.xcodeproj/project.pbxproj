@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E892B095FE100A42A1F /* HomeView.swift */; };
+		C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */; };
+		C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* ImportExportView.swift */; };
 		C9B2B2132B06A63900983569 /* PasswordWarehouse_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */; };
 		C9B2B2152B06A63900983569 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2142B06A63900983569 /* ContentView.swift */; };
 		C9B2B2172B06A63900983569 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2162B06A63900983569 /* Item.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9A03E892B095FE100A42A1F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
+		C9A03E8D2B09601400A42A1F /* ImportExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportExportView.swift; sourceTree = "<group>"; };
 		C9B2B20F2B06A63900983569 /* PasswordWarehouse_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordWarehouse_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWarehouse_iOSApp.swift; sourceTree = "<group>"; };
 		C9B2B2142B06A63900983569 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +80,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9A03E872B095F8800A42A1F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C9A03E882B095F9000A42A1F /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C9A03E882B095F9000A42A1F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9A03E892B095FE100A42A1F /* HomeView.swift */,
+				C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */,
+				C9A03E8D2B09601400A42A1F /* ImportExportView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C9B2B2062B06A63900983569 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +121,7 @@
 		C9B2B2112B06A63900983569 /* PasswordWarehouse_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C9A03E872B095F8800A42A1F /* UI */,
 				C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */,
 				C9B2B2142B06A63900983569 /* ContentView.swift */,
 				C9B2B2162B06A63900983569 /* Item.swift */,
@@ -197,6 +222,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
+				ORGANIZATIONNAME = "Chandler Cheng";
 				TargetAttributes = {
 					C9B2B20E2B06A63900983569 = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -263,6 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9B2B2152B06A63900983569 /* ContentView.swift in Sources */,
+				C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */,
+				C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */,
+				C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */,
 				C9B2B2172B06A63900983569 /* Item.swift in Sources */,
 				C9B2B2132B06A63900983569 /* PasswordWarehouse_iOSApp.swift in Sources */,
 			);

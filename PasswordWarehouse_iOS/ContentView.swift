@@ -13,54 +13,19 @@ struct ContentView: View {
     @Query private var items: [Item]
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        TabView {
+            HomeView().tabItem() {
+                Image(systemName: "house")
+                Text("Home")
             }
-#if os(macOS)
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-#endif
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItemGroup(placement: .bottomBar) {
-                    Button(action: addItem) {
-                        VStack {
-                            Image(systemName: "magnifyingglass")
-                            Text("Search")
-                        }
-                    }
-                    Button(action: addItem) {
-                        VStack {
-                            Image(systemName: "arrow.clockwise")
-                            Text("Generate")
-                        }
-                    }
-                    Button(action: addItem) {
-                        VStack {
-                            Image(systemName: "gear")
-                            Text("Backup & Restore")
-                        }
-                    }
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+            GeneratePasswordView().tabItem() {
+                Image(systemName: "arrow.clockwise")
+                Text("Generate")
             }
-        } detail: {
-            Text("Select an item")
+            ImportExportView().tabItem() {
+                Image(systemName: "arrow.up.arrow.down")
+                Text("Import & Export")
+            }
         }
     }
 
