@@ -8,14 +8,52 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var website: String = ""
+    @State private var username: String = ""
+    @State private var password: String = ""
+    
+    
     var body: some View {
-        ZStack {
-            Color.red
+        VStack(spacing: 16) {
+            Spacer()
+
+            LabeledContent {
+                TextField("", text: $website)
+                    .textFieldStyle(.roundedBorder)
+            } label: {
+                Label("Website", systemImage: "hammer")
+            }
+            .labeledContentStyle(.vertical)
+
+            LabeledContent {
+                TextField("", text: $username)
+                    .disableAutocorrection(true)
+                    .textFieldStyle(.roundedBorder)
+                    .textInputAutocapitalization(.never)
+            } label: {
+                Label("Username (email)", systemImage: "hammer")
+            }
+            .labeledContentStyle(.vertical)
+
+            LabeledContent {
+                TextField("", text: $password)
+                    .disableAutocorrection(true)
+                    .textFieldStyle(.roundedBorder)
+                    .textInputAutocapitalization(.never)
+            } label: {
+                Label("Password", systemImage: "hammer")
+            }
+            .labeledContentStyle(.vertical)
             
-            Image(systemName: "magnifyingglass")
-                .foregroundColor(Color.white)
-                .font(.system(size: 100.0))
+            Spacer()
+            
+            Button(action: {}) {
+                Label("Store", systemImage: "square.and.arrow.down")
+            }
+
+            Spacer()
         }
+        .padding()
     }
 }
 

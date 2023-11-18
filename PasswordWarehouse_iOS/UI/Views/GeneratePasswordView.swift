@@ -9,7 +9,13 @@ import SwiftUI
 
 struct GeneratePasswordView: View {
     var body: some View {
-        Text("Generate Password")
+        ZStack {
+            Color.green
+            
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(Color.white)
+                .font(.system(size: 100.0))
+        }
     }
 }
 
