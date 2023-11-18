@@ -17,6 +17,11 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
+                Text("Input credentials")
+                    .font(.title)
+                
+                Spacer().frame(height: 20)
+                
                 LabeledContent {
                     TextField("", text: $website)
                         .textFieldStyle(.roundedBorder)
@@ -31,23 +36,24 @@ struct HomeView: View {
                         .textFieldStyle(.roundedBorder)
                         .textInputAutocapitalization(.never)
                 } label: {
-                    Label("Username (email)", systemImage: "envelope")
+                    Label("Username / Email", systemImage: "envelope")
                 }
                 .labeledContentStyle(.vertical)
 
                 LabeledContent {
-                    TextField("", text: $password)
-                        .disableAutocorrection(true)
+                    VisiblePasswordField("", text: $password)
                         .textFieldStyle(.roundedBorder)
-                        .textInputAutocapitalization(.never)
                 } label: {
                     Label("Password", systemImage: "rectangle.and.pencil.and.ellipsis")
                 }
                 .labeledContentStyle(.vertical)
+                Button(action: copyPasswordToClipboard) {
+                    Label("Copy Password", systemImage: "doc.on.doc")
+                }
                 
                 Spacer().frame(height: 20)
-                
-                Button(action: {}) {
+
+                Button(action: storeCredentials) {
                     Label("Store", systemImage: "square.and.arrow.down")
                 }
             }
@@ -59,6 +65,15 @@ struct HomeView: View {
                 prompt: "e.g. Amazon US"
             )
         }
+    }
+
+
+    private func storeCredentials() {
+        
+    }
+    
+    private func copyPasswordToClipboard() {
+        UIPasteboard.general.string = self.password
     }
 }
 

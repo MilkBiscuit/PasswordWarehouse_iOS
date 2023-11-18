@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO: Use modal view instead
 struct GeneratePasswordView: View {
     var body: some View {
         ZStack {
