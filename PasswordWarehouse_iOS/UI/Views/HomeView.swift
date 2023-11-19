@@ -29,13 +29,7 @@ struct HomeView: View {
                 KumaTextField(
                     "Username / Email", labelImage: "envelope", text: $username
                 )
-                KumaTextField(
-                    "Password", labelImage: "rectangle.and.pencil.and.ellipsis", text: $password
-                )
-
-                Button(action: copyPasswordToClipboard) {
-                    Label("Copy Password", systemImage: "doc.on.doc")
-                }
+                KumaPasswordField(text: $password, copy: copyPasswordToClipboard)
                 
                 Spacer().frame(height: 20)
 
@@ -62,7 +56,7 @@ struct HomeView: View {
     private func copyPasswordToClipboard() {
         UIPasteboard.general.string = self.password
         // TODO: Add the password len into the toast
-        toast = Toast(message: "Copied value to the clipboard")
+        toast = Toast(message: "Copied password to clipboard")
     }
 }
 

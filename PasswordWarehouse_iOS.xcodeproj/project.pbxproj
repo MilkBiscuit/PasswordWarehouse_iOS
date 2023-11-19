@@ -11,7 +11,7 @@
 		C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */; };
 		C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* ImportExportView.swift */; };
 		C9A03E912B096A6B00A42A1F /* VerticalLabeledContentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E902B096A6B00A42A1F /* VerticalLabeledContentStyle.swift */; };
-		C9A03E942B097AAE00A42A1F /* VisiblePasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E932B097AAE00A42A1F /* VisiblePasswordField.swift */; };
+		C9A03E942B097AAE00A42A1F /* KumaPasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E932B097AAE00A42A1F /* KumaPasswordField.swift */; };
 		C9A03E962B09A77800A42A1F /* KumaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E952B09A77800A42A1F /* KumaTextField.swift */; };
 		C9A03E982B09AFBD00A42A1F /* KumaToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E972B09AFBD00A42A1F /* KumaToastView.swift */; };
 		C9A03E9A2B09B49F00A42A1F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E992B09B49F00A42A1F /* ColorExtension.swift */; };
@@ -48,7 +48,7 @@
 		C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
 		C9A03E8D2B09601400A42A1F /* ImportExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportExportView.swift; sourceTree = "<group>"; };
 		C9A03E902B096A6B00A42A1F /* VerticalLabeledContentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalLabeledContentStyle.swift; sourceTree = "<group>"; };
-		C9A03E932B097AAE00A42A1F /* VisiblePasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisiblePasswordField.swift; sourceTree = "<group>"; };
+		C9A03E932B097AAE00A42A1F /* KumaPasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaPasswordField.swift; sourceTree = "<group>"; };
 		C9A03E952B09A77800A42A1F /* KumaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaTextField.swift; sourceTree = "<group>"; };
 		C9A03E972B09AFBD00A42A1F /* KumaToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaToastView.swift; sourceTree = "<group>"; };
 		C9A03E992B09B49F00A42A1F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		C9A03E922B097A8B00A42A1F /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				C9A03E932B097AAE00A42A1F /* VisiblePasswordField.swift */,
+				C9A03E932B097AAE00A42A1F /* KumaPasswordField.swift */,
 				C9A03E952B09A77800A42A1F /* KumaTextField.swift */,
 				C9A03E972B09AFBD00A42A1F /* KumaToastView.swift */,
 			);
@@ -325,7 +325,7 @@
 				C9B2B2152B06A63900983569 /* ContentView.swift in Sources */,
 				C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */,
 				C9A03E962B09A77800A42A1F /* KumaTextField.swift in Sources */,
-				C9A03E942B097AAE00A42A1F /* VisiblePasswordField.swift in Sources */,
+				C9A03E942B097AAE00A42A1F /* KumaPasswordField.swift in Sources */,
 				C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */,
 				C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */,
 				C9A03E9C2B09BA2700A42A1F /* ViewExtension.swift in Sources */,

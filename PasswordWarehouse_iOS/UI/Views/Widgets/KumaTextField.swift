@@ -31,7 +31,7 @@ struct KumaTextField: View {
                 .font(.caption)
                 .padding([.top, .leading], 8)
         }
-        .background(.regularMaterial)
+        .background(Color.kumaTealLight)
         .labeledContentStyle(.vertical)
     }
 }
