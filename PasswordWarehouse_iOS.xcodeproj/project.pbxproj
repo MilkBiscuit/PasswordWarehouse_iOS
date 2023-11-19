@@ -16,6 +16,11 @@
 		C9A03E982B09AFBD00A42A1F /* KumaToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E972B09AFBD00A42A1F /* KumaToastView.swift */; };
 		C9A03E9A2B09B49F00A42A1F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E992B09B49F00A42A1F /* ColorExtension.swift */; };
 		C9A03E9C2B09BA2700A42A1F /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E9B2B09BA2700A42A1F /* ViewExtension.swift */; };
+		C9A0C0532B0A0B6300F560E3 /* Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0C0522B0A0B6300F560E3 /* Encrypt.swift */; };
+		C9A0C0552B0A0D4E00F560E3 /* Decrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0C0542B0A0D4E00F560E3 /* Decrypt.swift */; };
+		C9A0C0582B0A0E1400F560E3 /* EncryptTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0C0572B0A0E1400F560E3 /* EncryptTest.swift */; };
+		C9A0C0592B0A100D00F560E3 /* Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0C0522B0A0B6300F560E3 /* Encrypt.swift */; };
+		C9A0C05A2B0A101100F560E3 /* Decrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0C0542B0A0D4E00F560E3 /* Decrypt.swift */; };
 		C9B2B2132B06A63900983569 /* PasswordWarehouse_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */; };
 		C9B2B2152B06A63900983569 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2142B06A63900983569 /* ContentView.swift */; };
 		C9B2B2172B06A63900983569 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2162B06A63900983569 /* Item.swift */; };
@@ -53,6 +58,9 @@
 		C9A03E972B09AFBD00A42A1F /* KumaToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaToastView.swift; sourceTree = "<group>"; };
 		C9A03E992B09B49F00A42A1F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		C9A03E9B2B09BA2700A42A1F /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		C9A0C0522B0A0B6300F560E3 /* Encrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encrypt.swift; sourceTree = "<group>"; };
+		C9A0C0542B0A0D4E00F560E3 /* Decrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decrypt.swift; sourceTree = "<group>"; };
+		C9A0C0572B0A0E1400F560E3 /* EncryptTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptTest.swift; sourceTree = "<group>"; };
 		C9B2B20F2B06A63900983569 /* PasswordWarehouse_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordWarehouse_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWarehouse_iOSApp.swift; sourceTree = "<group>"; };
 		C9B2B2142B06A63900983569 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +140,23 @@
 			path = Widgets;
 			sourceTree = "<group>";
 		};
+		C9A03E9D2B0A08B800A42A1F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C9A0C0522B0A0B6300F560E3 /* Encrypt.swift */,
+				C9A0C0542B0A0D4E00F560E3 /* Decrypt.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C9A0C0562B0A0DDE00F560E3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C9A0C0572B0A0E1400F560E3 /* EncryptTest.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		C9B2B2062B06A63900983569 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +180,7 @@
 		C9B2B2112B06A63900983569 /* PasswordWarehouse_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C9A03E9D2B0A08B800A42A1F /* Domain */,
 				C9A03E872B095F8800A42A1F /* UI */,
 				C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */,
 				C9B2B2142B06A63900983569 /* ContentView.swift */,
@@ -177,6 +203,7 @@
 		C9B2B2252B06A63B00983569 /* PasswordWarehouse_iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				C9A0C0562B0A0DDE00F560E3 /* Domain */,
 				C9B2B2262B06A63B00983569 /* PasswordWarehouse_iOSTests.swift */,
 			);
 			path = PasswordWarehouse_iOSTests;
@@ -326,6 +353,7 @@
 				C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */,
 				C9A03E962B09A77800A42A1F /* KumaTextField.swift in Sources */,
 				C9A03E942B097AAE00A42A1F /* KumaPasswordField.swift in Sources */,
+				C9A0C0532B0A0B6300F560E3 /* Encrypt.swift in Sources */,
 				C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */,
 				C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */,
 				C9A03E9C2B09BA2700A42A1F /* ViewExtension.swift in Sources */,
@@ -334,6 +362,7 @@
 				C9A03E982B09AFBD00A42A1F /* KumaToastView.swift in Sources */,
 				C9A03E9A2B09B49F00A42A1F /* ColorExtension.swift in Sources */,
 				C9B2B2132B06A63900983569 /* PasswordWarehouse_iOSApp.swift in Sources */,
+				C9A0C0552B0A0D4E00F560E3 /* Decrypt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +370,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A0C0592B0A100D00F560E3 /* Encrypt.swift in Sources */,
 				C9B2B2272B06A63B00983569 /* PasswordWarehouse_iOSTests.swift in Sources */,
+				C9A0C0582B0A0E1400F560E3 /* EncryptTest.swift in Sources */,
+				C9A0C05A2B0A101100F560E3 /* Decrypt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
