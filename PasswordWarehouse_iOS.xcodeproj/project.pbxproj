@@ -12,6 +12,10 @@
 		C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* ImportExportView.swift */; };
 		C9A03E912B096A6B00A42A1F /* VerticalLabeledContentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E902B096A6B00A42A1F /* VerticalLabeledContentStyle.swift */; };
 		C9A03E942B097AAE00A42A1F /* VisiblePasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E932B097AAE00A42A1F /* VisiblePasswordField.swift */; };
+		C9A03E962B09A77800A42A1F /* KumaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E952B09A77800A42A1F /* KumaTextField.swift */; };
+		C9A03E982B09AFBD00A42A1F /* KumaToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E972B09AFBD00A42A1F /* KumaToastView.swift */; };
+		C9A03E9A2B09B49F00A42A1F /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E992B09B49F00A42A1F /* ColorExtension.swift */; };
+		C9A03E9C2B09BA2700A42A1F /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E9B2B09BA2700A42A1F /* ViewExtension.swift */; };
 		C9B2B2132B06A63900983569 /* PasswordWarehouse_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */; };
 		C9B2B2152B06A63900983569 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2142B06A63900983569 /* ContentView.swift */; };
 		C9B2B2172B06A63900983569 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2162B06A63900983569 /* Item.swift */; };
@@ -45,6 +49,10 @@
 		C9A03E8D2B09601400A42A1F /* ImportExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportExportView.swift; sourceTree = "<group>"; };
 		C9A03E902B096A6B00A42A1F /* VerticalLabeledContentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalLabeledContentStyle.swift; sourceTree = "<group>"; };
 		C9A03E932B097AAE00A42A1F /* VisiblePasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisiblePasswordField.swift; sourceTree = "<group>"; };
+		C9A03E952B09A77800A42A1F /* KumaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaTextField.swift; sourceTree = "<group>"; };
+		C9A03E972B09AFBD00A42A1F /* KumaToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaToastView.swift; sourceTree = "<group>"; };
+		C9A03E992B09B49F00A42A1F /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		C9A03E9B2B09BA2700A42A1F /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		C9B2B20F2B06A63900983569 /* PasswordWarehouse_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordWarehouse_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWarehouse_iOSApp.swift; sourceTree = "<group>"; };
 		C9B2B2142B06A63900983569 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +108,7 @@
 				C9A03E892B095FE100A42A1F /* HomeView.swift */,
 				C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */,
 				C9A03E8D2B09601400A42A1F /* ImportExportView.swift */,
+				C9A03E9B2B09BA2700A42A1F /* ViewExtension.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A03E902B096A6B00A42A1F /* VerticalLabeledContentStyle.swift */,
+				C9A03E992B09B49F00A42A1F /* ColorExtension.swift */,
 			);
 			path = Styling;
 			sourceTree = "<group>";
@@ -116,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				C9A03E932B097AAE00A42A1F /* VisiblePasswordField.swift */,
+				C9A03E952B09A77800A42A1F /* KumaTextField.swift */,
+				C9A03E972B09AFBD00A42A1F /* KumaToastView.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -312,11 +324,15 @@
 			files = (
 				C9B2B2152B06A63900983569 /* ContentView.swift in Sources */,
 				C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */,
+				C9A03E962B09A77800A42A1F /* KumaTextField.swift in Sources */,
 				C9A03E942B097AAE00A42A1F /* VisiblePasswordField.swift in Sources */,
 				C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */,
 				C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */,
+				C9A03E9C2B09BA2700A42A1F /* ViewExtension.swift in Sources */,
 				C9B2B2172B06A63900983569 /* Item.swift in Sources */,
 				C9A03E912B096A6B00A42A1F /* VerticalLabeledContentStyle.swift in Sources */,
+				C9A03E982B09AFBD00A42A1F /* KumaToastView.swift in Sources */,
+				C9A03E9A2B09B49F00A42A1F /* ColorExtension.swift in Sources */,
 				C9B2B2132B06A63900983569 /* PasswordWarehouse_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

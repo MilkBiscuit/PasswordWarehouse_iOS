@@ -13,40 +13,26 @@ struct HomeView: View {
     @State private var password: String = ""
     
     @State private var searchText = ""
+    @State private var toast: Toast? = nil
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 16) {
+            VStack(spacing: 1) {
                 Text("Input credentials")
                     .font(.title)
                 
                 Spacer().frame(height: 20)
                 
-                LabeledContent {
-                    TextField("", text: $website)
-                        .textFieldStyle(.roundedBorder)
-                } label: {
-                    Label("Website", systemImage: "globe")
-                }
-                .labeledContentStyle(.vertical)
+                KumaTextField(
+                    "Website", labelImage: "globe", text: $website
+                )
+                KumaTextField(
+                    "Username / Email", labelImage: "envelope", text: $username
+                )
+                KumaTextField(
+                    "Password", labelImage: "rectangle.and.pencil.and.ellipsis", text: $password
+                )
 
-                LabeledContent {
-                    TextField("", text: $username)
-                        .disableAutocorrection(true)
-                        .textFieldStyle(.roundedBorder)
-                        .textInputAutocapitalization(.never)
-                } label: {
-                    Label("Username / Email", systemImage: "envelope")
-                }
-                .labeledContentStyle(.vertical)
-
-                LabeledContent {
-                    VisiblePasswordField("", text: $password)
-                        .textFieldStyle(.roundedBorder)
-                } label: {
-                    Label("Password", systemImage: "rectangle.and.pencil.and.ellipsis")
-                }
-                .labeledContentStyle(.vertical)
                 Button(action: copyPasswordToClipboard) {
                     Label("Copy Password", systemImage: "doc.on.doc")
                 }
@@ -65,6 +51,7 @@ struct HomeView: View {
                 prompt: "e.g. Amazon US"
             )
         }
+        .toastView(toast: $toast)
     }
 
 
@@ -74,6 +61,8 @@ struct HomeView: View {
     
     private func copyPasswordToClipboard() {
         UIPasteboard.general.string = self.password
+        // TODO: Add the password len into the toast
+        toast = Toast(message: "Copied value to the clipboard")
     }
 }
 
