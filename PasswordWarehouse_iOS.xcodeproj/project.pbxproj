@@ -21,6 +21,7 @@
 		C9A0C0582B0A0E1400F560E3 /* EncryptTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0C0572B0A0E1400F560E3 /* EncryptTest.swift */; };
 		C9A0C0592B0A100D00F560E3 /* Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0C0522B0A0B6300F560E3 /* Encrypt.swift */; };
 		C9A0C05A2B0A101100F560E3 /* Decrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0C0542B0A0D4E00F560E3 /* Decrypt.swift */; };
+		C9A0C05D2B0A99E900F560E3 /* RNCryptor in Frameworks */ = {isa = PBXBuildFile; productRef = C9A0C05C2B0A99E900F560E3 /* RNCryptor */; };
 		C9B2B2132B06A63900983569 /* PasswordWarehouse_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */; };
 		C9B2B2152B06A63900983569 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2142B06A63900983569 /* ContentView.swift */; };
 		C9B2B2172B06A63900983569 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2162B06A63900983569 /* Item.swift */; };
@@ -80,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A0C05D2B0A99E900F560E3 /* RNCryptor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +236,9 @@
 			dependencies = (
 			);
 			name = PasswordWarehouse_iOS;
+			packageProductDependencies = (
+				C9A0C05C2B0A99E900F560E3 /* RNCryptor */,
+			);
 			productName = PasswordWarehouse_iOS;
 			productReference = C9B2B20F2B06A63900983569 /* PasswordWarehouse_iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -307,6 +312,9 @@
 				Base,
 			);
 			mainGroup = C9B2B2062B06A63900983569;
+			packageReferences = (
+				C9A0C05B2B0A99E900F560E3 /* XCRemoteSwiftPackageReference "RNCryptor" */,
+			);
 			productRefGroup = C9B2B2102B06A63900983569 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -722,6 +730,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9A0C05B2B0A99E900F560E3 /* XCRemoteSwiftPackageReference "RNCryptor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RNCryptor/RNCryptor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9A0C05C2B0A99E900F560E3 /* RNCryptor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9A0C05B2B0A99E900F560E3 /* XCRemoteSwiftPackageReference "RNCryptor" */;
+			productName = RNCryptor;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9B2B2072B06A63900983569 /* Project object */;
 }

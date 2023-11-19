@@ -26,11 +26,13 @@ final class EncryptTest: XCTestCase {
         let secret = "123456"
 
         // When encrypt them
-        let cipherText_1 = Encrypt.encryptString(messageTo: text_1, use: secret)
-        let cipherText_2 = Encrypt.encryptString(messageTo: text_2, use: secret)
+        let cipherText_1 = Encrypt.encryptString(message: text_1, use: secret)
+        let cipherText_2 = Encrypt.encryptString(message: text_2, use: secret)
+        print("cipher text 1: " + cipherText_1)
+        print("cipher text 2: " + cipherText_2)
         
         // Then the encrypted text are not the same (can NEVER use EBC mode)
-//        XCTAssertNotEqual(cipherText_1, cipherText_2)
+        XCTAssertNotEqual(cipherText_1, cipherText_2)
     }
 
 }

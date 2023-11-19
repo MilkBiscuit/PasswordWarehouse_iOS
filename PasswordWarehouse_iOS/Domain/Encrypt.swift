@@ -8,10 +8,15 @@
         
 
 import Foundation
+import RNCryptor
 
 class Encrypt {
-    static func encryptString(messageTo: String, use password: String) -> String {
-        return ""
+
+    static func encryptString(message: String, use password: String) -> String {
+        let messageData: Data = message.data(using: .utf8)!
+        let cipherData = RNCryptor.encrypt(data: messageData, withPassword: password)
+
+        return cipherData.base64EncodedString()
     }
     
 }
