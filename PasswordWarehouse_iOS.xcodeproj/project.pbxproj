@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90A9E832B0B5D5900FD5F2D /* EncryptAndDecrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A9E822B0B5D5900FD5F2D /* EncryptAndDecrypt.swift */; };
 		C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E892B095FE100A42A1F /* HomeView.swift */; };
 		C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */; };
 		C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* ImportExportView.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C90A9E822B0B5D5900FD5F2D /* EncryptAndDecrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptAndDecrypt.swift; sourceTree = "<group>"; };
 		C9A03E892B095FE100A42A1F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
 		C9A03E8D2B09601400A42A1F /* ImportExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportExportView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A0C0572B0A0E1400F560E3 /* EncryptTest.swift */,
+				C90A9E822B0B5D5900FD5F2D /* EncryptAndDecrypt.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			files = (
 				C9A0C0592B0A100D00F560E3 /* Encrypt.swift in Sources */,
 				C9B2B2272B06A63B00983569 /* PasswordWarehouse_iOSTests.swift in Sources */,
+				C90A9E832B0B5D5900FD5F2D /* EncryptAndDecrypt.swift in Sources */,
 				C9A0C0582B0A0E1400F560E3 /* EncryptTest.swift in Sources */,
 				C9A0C05A2B0A101100F560E3 /* Decrypt.swift in Sources */,
 			);
