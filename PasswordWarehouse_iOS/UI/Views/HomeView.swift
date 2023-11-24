@@ -15,6 +15,9 @@ struct HomeView: View {
     @State private var searchText = ""
     @State private var toast: Toast? = nil
     
+    @Inject
+    private var storeCredentialUC: StoreCredentialUC
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 1) {
@@ -50,7 +53,9 @@ struct HomeView: View {
 
 
     private func storeCredentials() {
-        
+        storeCredentialUC.invoke(
+            credential: CredentialItem(website: website, username: username, passwordClearText: password)
+        )
     }
     
     private func copyPasswordToClipboard() {

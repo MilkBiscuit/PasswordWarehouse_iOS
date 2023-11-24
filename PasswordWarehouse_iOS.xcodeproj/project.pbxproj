@@ -13,6 +13,9 @@
 		C90CB1782B10B32A00A8BC7F /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = C90CB1772B10B32A00A8BC7F /* Swinject */; };
 		C90CB17A2B10B3C900A8BC7F /* LocalFileCredentialRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1792B10B3C900A8BC7F /* LocalFileCredentialRepo.swift */; };
 		C90CB17D2B10B42000A8BC7F /* BuildContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB17C2B10B42000A8BC7F /* BuildContainer.swift */; };
+		C90CB17F2B10B64900A8BC7F /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB17E2B10B64900A8BC7F /* Inject.swift */; };
+		C90CB1812B10B66000A8BC7F /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1802B10B66000A8BC7F /* Resolver.swift */; };
+		C90CB1832B10B7E600A8BC7F /* StoreCredentialUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1822B10B7E600A8BC7F /* StoreCredentialUC.swift */; };
 		C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E892B095FE100A42A1F /* HomeView.swift */; };
 		C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */; };
 		C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* ImportExportView.swift */; };
@@ -61,6 +64,9 @@
 		C90CB1742B10AAE500A8BC7F /* CredentialItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialItem.swift; sourceTree = "<group>"; };
 		C90CB1792B10B3C900A8BC7F /* LocalFileCredentialRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileCredentialRepo.swift; sourceTree = "<group>"; };
 		C90CB17C2B10B42000A8BC7F /* BuildContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildContainer.swift; sourceTree = "<group>"; };
+		C90CB17E2B10B64900A8BC7F /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
+		C90CB1802B10B66000A8BC7F /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
+		C90CB1822B10B7E600A8BC7F /* StoreCredentialUC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCredentialUC.swift; sourceTree = "<group>"; };
 		C9A03E892B095FE100A42A1F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
 		C9A03E8D2B09601400A42A1F /* ImportExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportExportView.swift; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 		C90CB16F2B10A5F700A8BC7F /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				C90CB1822B10B7E600A8BC7F /* StoreCredentialUC.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -141,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				C90CB17C2B10B42000A8BC7F /* BuildContainer.swift */,
+				C90CB17E2B10B64900A8BC7F /* Inject.swift */,
+				C90CB1802B10B66000A8BC7F /* Resolver.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -408,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90CB1832B10B7E600A8BC7F /* StoreCredentialUC.swift in Sources */,
 				C9B2B2152B06A63900983569 /* ContentView.swift in Sources */,
 				C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */,
 				C9A03E962B09A77800A42A1F /* KumaTextField.swift in Sources */,
@@ -423,8 +433,10 @@
 				C9A03E912B096A6B00A42A1F /* VerticalLabeledContentStyle.swift in Sources */,
 				C9A03E982B09AFBD00A42A1F /* KumaToastView.swift in Sources */,
 				C9A03E9A2B09B49F00A42A1F /* ColorExtension.swift in Sources */,
+				C90CB1812B10B66000A8BC7F /* Resolver.swift in Sources */,
 				C90CB1722B10A8BC00A8BC7F /* ICredentialRepository.swift in Sources */,
 				C9B2B2132B06A63900983569 /* PasswordWarehouse_iOSApp.swift in Sources */,
+				C90CB17F2B10B64900A8BC7F /* Inject.swift in Sources */,
 				C9A0C0552B0A0D4E00F560E3 /* Decrypt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

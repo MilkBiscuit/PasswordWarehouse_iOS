@@ -15,6 +15,8 @@ class LocalFileCredentialRepo: ICredentialRepository {
     }
     
     func store(credential: CredentialItem) -> Bool {
+        print("I'm saving credentials :\(credential.website)")
+        
         return false
     }
     

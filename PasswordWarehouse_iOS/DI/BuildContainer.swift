@@ -12,8 +12,15 @@ import Swinject
 
 func buildContainer() -> Container {
     let container = Container()
+
+    // Domain
     container.register(ICredentialRepository.self) { _  in
         return LocalFileCredentialRepo()
+    }.inObjectScope(.container)
+    
+    // Use case
+    container.register(StoreCredentialUC.self) { _  in
+        return StoreCredentialUC()
     }.inObjectScope(.container)
 
     return container
