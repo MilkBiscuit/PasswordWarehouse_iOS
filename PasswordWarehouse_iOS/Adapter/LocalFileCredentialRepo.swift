@@ -53,7 +53,10 @@ class LocalFileCredentialRepo: ICredentialRepository {
     }
     
     func searchBy(website: String) -> [CredentialItem] {
-        return Array()
+        let matchedResults = cachedBook.filter { $0.key.localizedCaseInsensitiveContains(website) }
+        let encryptedItems = matchedResults.map { $0.value }
+
+        return encryptedItems.map { $0.decrypt() }
     }
     
     private func load() async -> CipherBook? {
