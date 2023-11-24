@@ -31,7 +31,7 @@ struct HomeView: View {
                 )
                 KumaTextField(
                     "Username / Email", labelImage: "envelope", text: $username
-                )
+                ).textInputAutocapitalization(TextInputAutocapitalization.never)
                 KumaPasswordField(text: $password, copy: copyPasswordToClipboard)
                 
                 Spacer().frame(height: 20)
@@ -54,7 +54,7 @@ struct HomeView: View {
 
     private func storeCredentials() {
         storeCredentialUC.invoke(
-            credential: CredentialItem(website: website, username: username, passwordClearText: password)
+            credential: CredentialItem(id: website, username: username, passwordClearText: password)
         )
     }
     

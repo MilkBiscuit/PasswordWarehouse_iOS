@@ -9,26 +9,26 @@
 
 import Foundation
 
-struct CredentialItem {
-    var website: String
+struct CredentialItem: Codable, Identifiable {
+    var id: String // website
     var username: String
     var passwordClearText: String
     
     public func encrypt() -> EncryptedCredentialItem {
         return EncryptedCredentialItem(
-            website: website, username: username, encryptedPassword: ""
+            id: id, username: username, encryptedPassword: passwordClearText
         );
     }
 }
 
-struct EncryptedCredentialItem {
-    var website: String
+struct EncryptedCredentialItem: Codable, Identifiable {
+    var id: String // website
     var username: String
     var encryptedPassword: String
     
     public func decrypt() -> CredentialItem {
         return CredentialItem(
-            website: website, username: username, passwordClearText: ""
+            id: id, username: username, passwordClearText: encryptedPassword
         );
     }
 }

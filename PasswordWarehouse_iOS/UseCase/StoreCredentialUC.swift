@@ -13,7 +13,9 @@ struct StoreCredentialUC {
     @Inject
     private var credentialRepo: ICredentialRepository
 
-    func invoke(credential: CredentialItem) -> Bool {
-        return credentialRepo.store(credential: credential)
+    func invoke(credential: CredentialItem) {
+        Task {
+            await credentialRepo.save(credential: credential)
+        }
     }
 }
