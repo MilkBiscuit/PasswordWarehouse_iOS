@@ -22,6 +22,9 @@ func buildContainer() -> Container {
     container.register(StoreCredentialUC.self) { _  in
         return StoreCredentialUC()
     }.inObjectScope(.container)
+    container.register(SearchCredentialUC.self) { _  in
+        return SearchCredentialUC()
+    }.inObjectScope(.container)
 
     return container
 }

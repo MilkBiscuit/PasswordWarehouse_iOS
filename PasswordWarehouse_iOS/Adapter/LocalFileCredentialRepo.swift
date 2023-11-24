@@ -9,8 +9,6 @@
 
 import Foundation
 
-typealias CipherBook = [String: EncryptedCredentialItem]
-
 class LocalFileCredentialRepo: ICredentialRepository {
     
     private var cachedBook: CipherBook = [:];
