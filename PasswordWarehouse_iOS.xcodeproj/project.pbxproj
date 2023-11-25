@@ -19,6 +19,7 @@
 		C90CB1862B113EB700A8BC7F /* LumberJack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1852B113EB700A8BC7F /* LumberJack.swift */; };
 		C90CB1882B11426900A8BC7F /* CipherBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1872B11426900A8BC7F /* CipherBook.swift */; };
 		C90CB18A2B1142BE00A8BC7F /* SearchCredentialUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1892B1142BE00A8BC7F /* SearchCredentialUC.swift */; };
+		C90CB18F2B116FA500A8BC7F /* SearchResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB18E2B116FA500A8BC7F /* SearchResultListView.swift */; };
 		C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E892B095FE100A42A1F /* HomeView.swift */; };
 		C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */; };
 		C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* ImportExportView.swift */; };
@@ -73,6 +74,7 @@
 		C90CB1852B113EB700A8BC7F /* LumberJack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumberJack.swift; sourceTree = "<group>"; };
 		C90CB1872B11426900A8BC7F /* CipherBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CipherBook.swift; sourceTree = "<group>"; };
 		C90CB1892B1142BE00A8BC7F /* SearchCredentialUC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCredentialUC.swift; sourceTree = "<group>"; };
+		C90CB18E2B116FA500A8BC7F /* SearchResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultListView.swift; sourceTree = "<group>"; };
 		C9A03E892B095FE100A42A1F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
 		C9A03E8D2B09601400A42A1F /* ImportExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportExportView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				C9A03E892B095FE100A42A1F /* HomeView.swift */,
 				C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */,
 				C9A03E8D2B09601400A42A1F /* ImportExportView.swift */,
+				C90CB18E2B116FA500A8BC7F /* SearchResultListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				C90CB1862B113EB700A8BC7F /* LumberJack.swift in Sources */,
 				C9A03E9A2B09B49F00A42A1F /* ColorExtension.swift in Sources */,
 				C90CB1812B10B66000A8BC7F /* Resolver.swift in Sources */,
+				C90CB18F2B116FA500A8BC7F /* SearchResultListView.swift in Sources */,
 				C90CB1722B10A8BC00A8BC7F /* ICredentialRepository.swift in Sources */,
 				C9B2B2132B06A63900983569 /* PasswordWarehouse_iOSApp.swift in Sources */,
 				C90CB17F2B10B64900A8BC7F /* Inject.swift in Sources */,

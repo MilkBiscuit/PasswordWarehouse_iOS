@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct CredentialItem: Codable, Identifiable {
+struct CredentialItem: Codable, Hashable, Identifiable {
     var id: String // website
     var username: String
     var passwordClearText: String

@@ -13,6 +13,7 @@ struct HomeView: View {
     @State private var password: String = ""
     @State private var searchText: String = ""
     @State private var toast: Toast? = nil
+    @State private var navPath = NavigationPath()
     
     @Inject
     private var storeCredentialUC: StoreCredentialUC
@@ -20,7 +21,7 @@ struct HomeView: View {
     private var searchCredentialUC: SearchCredentialUC
     
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $navPath) {
             VStack(spacing: 1) {
                 Text("Input credentials")
                     .font(.title)
@@ -51,6 +52,9 @@ struct HomeView: View {
             .onSubmit(of: .search) {
                 searchCredentials()
             }
+            .navigationDestination(for: CredentialList.self) { list in
+                SearchResultListView(credentialList: list)
+            }
         }
         .toastView(toast: $toast)
     }
@@ -73,8 +77,7 @@ struct HomeView: View {
             username = results[0].username
             password = results[0].passwordClearText
         } else {
-            // TODO: open a list view
-            print(results)
+            navPath.append(results)
         }
     }
 
