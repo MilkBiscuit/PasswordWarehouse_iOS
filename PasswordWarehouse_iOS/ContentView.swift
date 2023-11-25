@@ -18,13 +18,9 @@ struct ContentView: View {
                 Image(systemName: "house")
                 Text("Home")
             }
-            GeneratePasswordView().tabItem() {
-                Image(systemName: "arrow.clockwise")
-                Text("Generate")
-            }
-            ImportExportView().tabItem() {
-                Image(systemName: "arrow.up.arrow.down")
-                Text("Import & Export")
+            SettingsView().tabItem() {
+                Image(systemName: "gear")
+                Text("Settings")
             }
         }
     }

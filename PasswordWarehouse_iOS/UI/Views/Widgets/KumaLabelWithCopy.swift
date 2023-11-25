@@ -11,6 +11,7 @@ import SwiftUI
 
 struct KumaLabelWithCopy: View {
     
+    private let copyIconSize: CGFloat = 44
     private var imageName: String
     private var text: String
     private var copyToClipboard: () -> Void
@@ -36,13 +37,14 @@ struct KumaLabelWithCopy: View {
                 Image(systemName: "doc.on.doc")
             }
             .buttonStyle(BorderlessButtonStyle())
+            .frame(minWidth: copyIconSize, minHeight: copyIconSize)
         }
         .frame(maxWidth: .infinity)
     }
 }
 
 #Preview {
-    VStack {
+    VStack(spacing: 0) {
         KumaLabelWithCopy(labelImage: "envelope", text: "dc9909@hotmail.com", copy: {})
         KumaLabelWithCopy(labelImage: "rectangle.and.pencil.and.ellipsis", text: "123456", copy: {})
     }

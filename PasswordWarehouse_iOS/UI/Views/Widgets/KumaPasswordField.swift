@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct KumaPasswordField: View {
-    private let iconPanelWidth: CGFloat = 32 * 2 + 8 * 2
+    private let iconWidth: CGFloat = 44
+    private let iconPanelWidth: CGFloat
     private let labelText: String = "Password"
     private let labelImage: String = "rectangle.and.pencil.and.ellipsis"
 
@@ -19,6 +20,7 @@ struct KumaPasswordField: View {
     init(text: Binding<String>, copy callback: @escaping () -> Void) {
         self._password = text
         self.copyToClipboard = callback
+        self.iconPanelWidth = iconWidth * 2
     }
     
     var body: some View {
@@ -47,12 +49,12 @@ struct KumaPasswordField: View {
                     Image(systemName: self.isSecured ? "eye" : "eye.slash")
                         .accentColor(.gray)
                 }
-                Spacer().frame(width: 8)
+                .frame(minWidth: iconWidth, maxHeight: .infinity)
                 Button(action: copyToClipboard) {
                     Image(systemName: "doc.on.doc")
                         .accentColor(.gray)
                 }
-                Spacer().frame(width: 8)
+                .frame(minWidth: iconWidth, maxHeight: .infinity)
             }
             .frame(minWidth: iconPanelWidth, maxHeight: .infinity)
             .background(Color.kumaTealLight)

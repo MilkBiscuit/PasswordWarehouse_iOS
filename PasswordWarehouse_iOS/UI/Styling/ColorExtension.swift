@@ -24,6 +24,6 @@ extension Color {
         Color(red: 0.2, green: 0.2, blue: 0.2)
     }
     static var kumaTealLight: Color {
-        Color(red: 0, green: 0.592, blue: 0.655, opacity: 0.1)
+        Color(red: 0, green: 0.592, blue: 0.655, opacity: 0.2)
     }
 }

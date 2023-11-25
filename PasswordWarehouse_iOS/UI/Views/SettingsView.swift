@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ImportExportView: View {
+struct SettingsView: View {
     var body: some View {
         Text("Import and Export")
     }
 }
 
 #Preview {
-    ImportExportView()
+    SettingsView()
 }

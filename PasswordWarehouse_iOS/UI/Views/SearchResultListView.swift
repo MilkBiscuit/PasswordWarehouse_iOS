@@ -20,7 +20,7 @@ struct SearchResultListView: View {
         List {
             ForEach(credentialList) { item in
                 Section (header: Text(item.id).font(.headline)) {
-                    VStack(alignment: .leading, content: {
+                    VStack(alignment: .leading, spacing: 0, content: {
                         KumaLabelWithCopy(
                             labelImage: "envelope",
                             text: item.username,

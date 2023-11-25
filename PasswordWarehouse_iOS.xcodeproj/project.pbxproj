@@ -28,7 +28,7 @@
 		C90CB19C2B11D22F00A8BC7F /* CipherBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1872B11426900A8BC7F /* CipherBook.swift */; };
 		C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E892B095FE100A42A1F /* HomeView.swift */; };
 		C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */; };
-		C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* ImportExportView.swift */; };
+		C9A03E8E2B09601400A42A1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* SettingsView.swift */; };
 		C9A03E912B096A6B00A42A1F /* VerticalLabeledContentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E902B096A6B00A42A1F /* VerticalLabeledContentStyle.swift */; };
 		C9A03E942B097AAE00A42A1F /* KumaPasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E932B097AAE00A42A1F /* KumaPasswordField.swift */; };
 		C9A03E962B09A77800A42A1F /* KumaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E952B09A77800A42A1F /* KumaTextField.swift */; };
@@ -86,7 +86,7 @@
 		C90CB1992B11CEDC00A8BC7F /* SensitiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensitiveData.swift; sourceTree = "<group>"; };
 		C9A03E892B095FE100A42A1F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
-		C9A03E8D2B09601400A42A1F /* ImportExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportExportView.swift; sourceTree = "<group>"; };
+		C9A03E8D2B09601400A42A1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C9A03E902B096A6B00A42A1F /* VerticalLabeledContentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalLabeledContentStyle.swift; sourceTree = "<group>"; };
 		C9A03E932B097AAE00A42A1F /* KumaPasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaPasswordField.swift; sourceTree = "<group>"; };
 		C9A03E952B09A77800A42A1F /* KumaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaTextField.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 				C9A03E922B097A8B00A42A1F /* Widgets */,
 				C9A03E892B095FE100A42A1F /* HomeView.swift */,
 				C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */,
-				C9A03E8D2B09601400A42A1F /* ImportExportView.swift */,
+				C9A03E8D2B09601400A42A1F /* SettingsView.swift */,
 				C90CB18E2B116FA500A8BC7F /* SearchResultListView.swift */,
 			);
 			path = Views;
@@ -464,7 +464,7 @@
 				C9A03E942B097AAE00A42A1F /* KumaPasswordField.swift in Sources */,
 				C9A0C0532B0A0B6300F560E3 /* Encrypt.swift in Sources */,
 				C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */,
-				C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */,
+				C9A03E8E2B09601400A42A1F /* SettingsView.swift in Sources */,
 				C90CB1932B119B4F00A8BC7F /* KumaLabelWithCopy.swift in Sources */,
 				C90CB1982B11CE7000A8BC7F /* Item.swift in Sources */,
 				C90CB17A2B10B3C900A8BC7F /* LocalFileCredentialRepo.swift in Sources */,
