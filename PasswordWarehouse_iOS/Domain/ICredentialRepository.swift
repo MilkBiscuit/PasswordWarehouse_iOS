@@ -10,7 +10,7 @@
 import Foundation
 
 protocol ICredentialRepository {
-    func remove(credential: CredentialItem) async -> Bool
-    func save(credential: CredentialItem) async -> Bool
-    func searchBy(website: String) -> [CredentialItem]
+    func remove(credential: EncryptedCredentialItem) async -> Bool
+    func save(credential: EncryptedCredentialItem) async -> Bool
+    func searchBy(website: String) -> [EncryptedCredentialItem]
 }

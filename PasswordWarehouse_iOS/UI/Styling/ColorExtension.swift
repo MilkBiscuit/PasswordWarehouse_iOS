@@ -11,6 +11,9 @@ extension Color {
     static var systemBackground: Color {
         Color(UIColor.systemBackground)
     }
+    static var lightGray: Color {
+        Color(UIColor.lightGray)
+    }
     static var kumaTeal: Color {
         Color(red: 0, green: 0.592, blue: 0.655)
     }

@@ -15,7 +15,7 @@ struct StoreCredentialUC {
 
     func invoke(credential: CredentialItem) {
         Task {
-            await credentialRepo.save(credential: credential)
+            await credentialRepo.save(credential: credential.encrypt())
         }
     }
 }

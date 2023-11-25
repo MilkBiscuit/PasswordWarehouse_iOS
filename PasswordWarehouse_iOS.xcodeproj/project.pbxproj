@@ -21,6 +21,7 @@
 		C90CB18A2B1142BE00A8BC7F /* SearchCredentialUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1892B1142BE00A8BC7F /* SearchCredentialUC.swift */; };
 		C90CB18F2B116FA500A8BC7F /* SearchResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB18E2B116FA500A8BC7F /* SearchResultListView.swift */; };
 		C90CB1932B119B4F00A8BC7F /* KumaLabelWithCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1922B119B4F00A8BC7F /* KumaLabelWithCopy.swift */; };
+		C90CB1962B11C22400A8BC7F /* PersistentFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1952B11C22400A8BC7F /* PersistentFileHelper.swift */; };
 		C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E892B095FE100A42A1F /* HomeView.swift */; };
 		C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */; };
 		C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* ImportExportView.swift */; };
@@ -77,6 +78,7 @@
 		C90CB1892B1142BE00A8BC7F /* SearchCredentialUC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCredentialUC.swift; sourceTree = "<group>"; };
 		C90CB18E2B116FA500A8BC7F /* SearchResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultListView.swift; sourceTree = "<group>"; };
 		C90CB1922B119B4F00A8BC7F /* KumaLabelWithCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaLabelWithCopy.swift; sourceTree = "<group>"; };
+		C90CB1952B11C22400A8BC7F /* PersistentFileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentFileHelper.swift; sourceTree = "<group>"; };
 		C9A03E892B095FE100A42A1F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
 		C9A03E8D2B09601400A42A1F /* ImportExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportExportView.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				C90CB1852B113EB700A8BC7F /* LumberJack.swift */,
+				C90CB1952B11C22400A8BC7F /* PersistentFileHelper.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -267,18 +270,18 @@
 		C9B2B2112B06A63900983569 /* PasswordWarehouse_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C90CB1842B113E9500A8BC7F /* Utility */,
-				C90CB17B2B10B40F00A8BC7F /* DI */,
 				C90CB1702B10A63700A8BC7F /* Adapter */,
-				C90CB16F2B10A5F700A8BC7F /* UseCase */,
-				C9A03E9D2B0A08B800A42A1F /* Domain */,
-				C9A03E872B095F8800A42A1F /* UI */,
-				C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */,
-				C9B2B2142B06A63900983569 /* ContentView.swift */,
-				C9B2B2162B06A63900983569 /* Item.swift */,
 				C9B2B2182B06A63B00983569 /* Assets.xcassets */,
+				C9B2B2142B06A63900983569 /* ContentView.swift */,
+				C90CB17B2B10B40F00A8BC7F /* DI */,
+				C9A03E9D2B0A08B800A42A1F /* Domain */,
+				C9B2B2162B06A63900983569 /* Item.swift */,
 				C9B2B21A2B06A63B00983569 /* PasswordWarehouse_iOS.entitlements */,
+				C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */,
 				C9B2B21B2B06A63B00983569 /* Preview Content */,
+				C9A03E872B095F8800A42A1F /* UI */,
+				C90CB16F2B10A5F700A8BC7F /* UseCase */,
+				C90CB1842B113E9500A8BC7F /* Utility */,
 			);
 			path = PasswordWarehouse_iOS;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				C90CB1932B119B4F00A8BC7F /* KumaLabelWithCopy.swift in Sources */,
 				C90CB17A2B10B3C900A8BC7F /* LocalFileCredentialRepo.swift in Sources */,
 				C9A03E9C2B09BA2700A42A1F /* ViewExtension.swift in Sources */,
+				C90CB1962B11C22400A8BC7F /* PersistentFileHelper.swift in Sources */,
 				C90CB1882B11426900A8BC7F /* CipherBook.swift in Sources */,
 				C9B2B2172B06A63900983569 /* Item.swift in Sources */,
 				C90CB17D2B10B42000A8BC7F /* BuildContainer.swift in Sources */,

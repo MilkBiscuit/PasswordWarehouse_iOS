@@ -14,6 +14,6 @@ struct SearchCredentialUC {
     private var credentialRepo: ICredentialRepository
 
     func invoke(website keyword: String) -> [CredentialItem] {
-        return credentialRepo.searchBy(website: keyword)
+        return credentialRepo.searchBy(website: keyword).map { $0.decrypt() }
     }
 }

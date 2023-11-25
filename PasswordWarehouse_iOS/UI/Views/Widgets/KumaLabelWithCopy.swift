@@ -27,6 +27,7 @@ struct KumaLabelWithCopy: View {
                 Text(text)
             } icon: {
                 Image(systemName: imageName)
+                    .foregroundColor(.lightGray)
                     .font(Font.system(size: 12, design: .monospaced))
                     .frame(minWidth: 20)
             }

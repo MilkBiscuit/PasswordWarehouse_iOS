@@ -23,15 +23,11 @@ class LocalFileCredentialRepo: ICredentialRepository {
         }
     }
     
-    private static func fileURL() throws -> URL {
-        try FileManager.default.url(for: .documentDirectory,
-                                    in: .userDomainMask,
-                                    appropriateFor: nil,
-                                    create: false)
-        .appendingPathComponent("credentials.json")
+    private static func fileURL() -> URL {
+        return PersistentFileHelper.fileURL(fileName: "credentials.json")
     }
 
-    func remove(credential: CredentialItem) async -> Bool {
+    func remove(credential: EncryptedCredentialItem) async -> Bool {
         guard cachedBook.removeValue(forKey: credential.id) != nil
         else {
             return false
@@ -40,9 +36,8 @@ class LocalFileCredentialRepo: ICredentialRepository {
         return await save(cipherBook: cachedBook)
     }
     
-    func save(credential: CredentialItem) async -> Bool {
-        let encryptedItem = credential.encrypt()
-        cachedBook[credential.id] = encryptedItem
+    func save(credential: EncryptedCredentialItem) async -> Bool {
+        cachedBook[credential.id] = credential
         for item in cachedBook {
             print("key is \(item.key), value is \(item.value)")
         }
@@ -50,44 +45,18 @@ class LocalFileCredentialRepo: ICredentialRepository {
         return await save(cipherBook: cachedBook)
     }
     
-    func searchBy(website: String) -> [CredentialItem] {
-        let matchedResults = cachedBook.filter { $0.key.localizedCaseInsensitiveContains(website) }
-        let encryptedItems = matchedResults.map { $0.value }
-
-        return encryptedItems.map { $0.decrypt() }
+    func searchBy(website: String) -> [EncryptedCredentialItem] {
+        let matchedResults = cachedBook.filter {
+            $0.key.localizedCaseInsensitiveContains(website)
+        }
+        return matchedResults.map { $0.value }
     }
     
     private func load() async -> CipherBook? {
-        let task = Task<[String: EncryptedCredentialItem], Error> {
-            let fileURL = try Self.fileURL()
-            guard let data = try? Data(contentsOf: fileURL) else {
-                return [:]
-            }
-
-            return try JSONDecoder().decode(CipherBook.self, from: data)
-        }
-
-        do {
-            return try await task.value
-        } catch {
-            return nil
-        }
+        return await PersistentFileHelper.readFromFile(CipherBook.self, from: Self.fileURL())
     }
     
     private func save(cipherBook: CipherBook) async -> Bool {
-        let task = Task {
-            let data = try JSONEncoder().encode(cipherBook)
-            let outfile = try Self.fileURL()
-            try data.write(to: outfile)
-        }
-        do {
-            _ = try await task.value
-            
-            return true
-        } catch {
-            print(error.localizedDescription)
-            
-            return false
-        }
+        return await PersistentFileHelper.writeToFile(fileUrl: Self.fileURL(), value: cipherBook)
     }
 }
