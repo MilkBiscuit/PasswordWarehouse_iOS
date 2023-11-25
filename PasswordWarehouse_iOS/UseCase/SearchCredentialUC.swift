@@ -14,6 +14,14 @@ struct SearchCredentialUC {
     private var credentialRepo: ICredentialRepository
 
     func invoke(website keyword: String) -> [CredentialItem] {
-        return credentialRepo.searchBy(website: keyword).map { $0.decrypt() }
+        return credentialRepo.searchBy(website: keyword).map {
+            guard let decrypted = Decrypt.decrypt(
+                item: $0, with: SensitiveData.defaultMasterPassword
+            ) else {
+                fatalError("Something terribly wrong, failed to decrypt!")
+            }
+
+            return decrypted
+        }
     }
 }

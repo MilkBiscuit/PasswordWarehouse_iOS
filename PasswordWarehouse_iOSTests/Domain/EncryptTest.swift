@@ -26,8 +26,8 @@ final class EncryptTest: XCTestCase {
         let secret = "123456"
 
         // When encrypt them
-        let cipherText_1 = Encrypt.encryptString(message: text_1, use: secret)
-        let cipherText_2 = Encrypt.encryptString(message: text_2, use: secret)
+        let cipherText_1 = Encrypt.encryptString(message: text_1, with: secret)
+        let cipherText_2 = Encrypt.encryptString(message: text_2, with: secret)
         print("cipher text 1: " + cipherText_1)
         print("cipher text 2: " + cipherText_2)
         

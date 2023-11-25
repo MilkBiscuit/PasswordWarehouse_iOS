@@ -72,6 +72,7 @@ struct HomeView: View {
         let keyword = searchText
         let results = searchCredentialUC.invoke(website: keyword)
         if results.isEmpty {
+            toast = Toast(message: "No matched results.")
             return
         }
         let count = results.count

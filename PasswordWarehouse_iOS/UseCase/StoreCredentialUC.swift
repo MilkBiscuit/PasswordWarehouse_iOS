@@ -15,7 +15,8 @@ struct StoreCredentialUC {
 
     func invoke(credential: CredentialItem) {
         Task {
-            await credentialRepo.save(credential: credential.encrypt())
+            let encryptedItem = Encrypt.encrypt(item: credential, with: SensitiveData.defaultMasterPassword)
+            let _ = await credentialRepo.save(credential: encryptedItem)
         }
     }
 }

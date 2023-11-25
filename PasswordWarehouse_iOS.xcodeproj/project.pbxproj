@@ -22,6 +22,10 @@
 		C90CB18F2B116FA500A8BC7F /* SearchResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB18E2B116FA500A8BC7F /* SearchResultListView.swift */; };
 		C90CB1932B119B4F00A8BC7F /* KumaLabelWithCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1922B119B4F00A8BC7F /* KumaLabelWithCopy.swift */; };
 		C90CB1962B11C22400A8BC7F /* PersistentFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1952B11C22400A8BC7F /* PersistentFileHelper.swift */; };
+		C90CB1982B11CE7000A8BC7F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1972B11CE7000A8BC7F /* Item.swift */; };
+		C90CB19A2B11CEDC00A8BC7F /* SensitiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1992B11CEDC00A8BC7F /* SensitiveData.swift */; };
+		C90CB19B2B11D22C00A8BC7F /* CredentialItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1742B10AAE500A8BC7F /* CredentialItem.swift */; };
+		C90CB19C2B11D22F00A8BC7F /* CipherBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1872B11426900A8BC7F /* CipherBook.swift */; };
 		C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E892B095FE100A42A1F /* HomeView.swift */; };
 		C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */; };
 		C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* ImportExportView.swift */; };
@@ -39,7 +43,6 @@
 		C9A0C05D2B0A99E900F560E3 /* RNCryptor in Frameworks */ = {isa = PBXBuildFile; productRef = C9A0C05C2B0A99E900F560E3 /* RNCryptor */; };
 		C9B2B2132B06A63900983569 /* PasswordWarehouse_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */; };
 		C9B2B2152B06A63900983569 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2142B06A63900983569 /* ContentView.swift */; };
-		C9B2B2172B06A63900983569 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2162B06A63900983569 /* Item.swift */; };
 		C9B2B2192B06A63B00983569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B2B2182B06A63B00983569 /* Assets.xcassets */; };
 		C9B2B21D2B06A63B00983569 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B2B21C2B06A63B00983569 /* Preview Assets.xcassets */; };
 		C9B2B2272B06A63B00983569 /* PasswordWarehouse_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2262B06A63B00983569 /* PasswordWarehouse_iOSTests.swift */; };
@@ -79,6 +82,8 @@
 		C90CB18E2B116FA500A8BC7F /* SearchResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultListView.swift; sourceTree = "<group>"; };
 		C90CB1922B119B4F00A8BC7F /* KumaLabelWithCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaLabelWithCopy.swift; sourceTree = "<group>"; };
 		C90CB1952B11C22400A8BC7F /* PersistentFileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentFileHelper.swift; sourceTree = "<group>"; };
+		C90CB1972B11CE7000A8BC7F /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C90CB1992B11CEDC00A8BC7F /* SensitiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensitiveData.swift; sourceTree = "<group>"; };
 		C9A03E892B095FE100A42A1F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
 		C9A03E8D2B09601400A42A1F /* ImportExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportExportView.swift; sourceTree = "<group>"; };
@@ -94,7 +99,6 @@
 		C9B2B20F2B06A63900983569 /* PasswordWarehouse_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordWarehouse_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWarehouse_iOSApp.swift; sourceTree = "<group>"; };
 		C9B2B2142B06A63900983569 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C9B2B2162B06A63900983569 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C9B2B2182B06A63B00983569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9B2B21A2B06A63B00983569 /* PasswordWarehouse_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PasswordWarehouse_iOS.entitlements; sourceTree = "<group>"; };
 		C9B2B21C2B06A63B00983569 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -275,13 +279,14 @@
 				C9B2B2142B06A63900983569 /* ContentView.swift */,
 				C90CB17B2B10B40F00A8BC7F /* DI */,
 				C9A03E9D2B0A08B800A42A1F /* Domain */,
-				C9B2B2162B06A63900983569 /* Item.swift */,
+				C90CB1972B11CE7000A8BC7F /* Item.swift */,
 				C9B2B21A2B06A63B00983569 /* PasswordWarehouse_iOS.entitlements */,
 				C9B2B2122B06A63900983569 /* PasswordWarehouse_iOSApp.swift */,
 				C9B2B21B2B06A63B00983569 /* Preview Content */,
 				C9A03E872B095F8800A42A1F /* UI */,
 				C90CB16F2B10A5F700A8BC7F /* UseCase */,
 				C90CB1842B113E9500A8BC7F /* Utility */,
+				C90CB1992B11CEDC00A8BC7F /* SensitiveData.swift */,
 			);
 			path = PasswordWarehouse_iOS;
 			sourceTree = "<group>";
@@ -461,14 +466,15 @@
 				C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */,
 				C9A03E8E2B09601400A42A1F /* ImportExportView.swift in Sources */,
 				C90CB1932B119B4F00A8BC7F /* KumaLabelWithCopy.swift in Sources */,
+				C90CB1982B11CE7000A8BC7F /* Item.swift in Sources */,
 				C90CB17A2B10B3C900A8BC7F /* LocalFileCredentialRepo.swift in Sources */,
 				C9A03E9C2B09BA2700A42A1F /* ViewExtension.swift in Sources */,
 				C90CB1962B11C22400A8BC7F /* PersistentFileHelper.swift in Sources */,
 				C90CB1882B11426900A8BC7F /* CipherBook.swift in Sources */,
-				C9B2B2172B06A63900983569 /* Item.swift in Sources */,
 				C90CB17D2B10B42000A8BC7F /* BuildContainer.swift in Sources */,
 				C90CB1752B10AAE500A8BC7F /* CredentialItem.swift in Sources */,
 				C9A03E912B096A6B00A42A1F /* VerticalLabeledContentStyle.swift in Sources */,
+				C90CB19A2B11CEDC00A8BC7F /* SensitiveData.swift in Sources */,
 				C9A03E982B09AFBD00A42A1F /* KumaToastView.swift in Sources */,
 				C90CB1862B113EB700A8BC7F /* LumberJack.swift in Sources */,
 				C9A03E9A2B09B49F00A42A1F /* ColorExtension.swift in Sources */,
@@ -485,7 +491,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90CB19C2B11D22F00A8BC7F /* CipherBook.swift in Sources */,
 				C9A0C0592B0A100D00F560E3 /* Encrypt.swift in Sources */,
+				C90CB19B2B11D22C00A8BC7F /* CredentialItem.swift in Sources */,
 				C9B2B2272B06A63B00983569 /* PasswordWarehouse_iOSTests.swift in Sources */,
 				C90A9E832B0B5D5900FD5F2D /* EncryptAndDecrypt.swift in Sources */,
 				C9A0C0582B0A0E1400F560E3 /* EncryptTest.swift in Sources */,
