@@ -19,7 +19,7 @@ final class EncryptTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testEncryptSameText() throws {
+    func testEncryptSameTextWithSameKey() throws {
         // Given 2 exact same text strings
         let text_1 = "Hello World"
         let text_2 = "Hello World"
