@@ -14,18 +14,28 @@ typealias CredentialList = [CredentialItem]
 
 struct SearchResultListView: View {
     var credentialList: CredentialList
+    var copy: (String) -> Void
     
     var body: some View {
         List {
             ForEach(credentialList) { item in
-                Section (header: Text(item.id)) {
+                Section (header: Text(item.id).font(.headline)) {
                     VStack(alignment: .leading, content: {
-                        Text(item.username)
-                        Text(item.passwordClearText)
+                        KumaLabelWithCopy(
+                            labelImage: "envelope",
+                            text: item.username,
+                            copy: {copy(item.username)}
+                        )
+                        KumaLabelWithCopy(
+                            labelImage: "rectangle.and.pencil.and.ellipsis",
+                            text: item.passwordClearText,
+                            copy: {copy(item.passwordClearText)}
+                        )
                     })
                 }
             }
         }
+        .listStyle(.grouped)
     }
 }
 
@@ -35,6 +45,7 @@ struct SearchResultListView: View {
             CredentialItem(id: "Amazon AU", username: "abc@gmail.com", passwordClearText: "123456"),
             CredentialItem(id: "Amazon CN", username: "abc@hotmail.com", passwordClearText: "123456"),
             CredentialItem(id: "Amazon US", username: "123@gmail.com", passwordClearText: "123456"),
-        ]
+        ],
+        copy: {_ in }
     )
 }

@@ -10,7 +10,6 @@ import SwiftUI
 
 struct KumaTextField: View {
     
-    @Environment(\.colorScheme) var colorScheme
     @Binding private var text: String
     private var labelImage: String
     private var title: String
@@ -37,5 +36,5 @@ struct KumaTextField: View {
 }
 
 #Preview {
-    KumaTextField("Website", text: .constant("Facebook"))
+    KumaTextField("Website", labelImage: "doc.on.doc", text: .constant("Facebook"))
 }

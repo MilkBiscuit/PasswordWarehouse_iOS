@@ -32,9 +32,9 @@ struct HomeView: View {
                     "Website", labelImage: "globe", text: $website
                 )
                 KumaTextField(
-                    "Username / Email", labelImage: "envelope", text: $username
+                    "Account Number / Email / Username", labelImage: "envelope", text: $username
                 ).textInputAutocapitalization(TextInputAutocapitalization.never)
-                KumaPasswordField(text: $password, copy: copyPasswordToClipboard)
+                KumaPasswordField(text: $password, copy: {copyToClipboard(self.password)})
                 
                 Spacer().frame(height: 20)
 
@@ -53,16 +53,19 @@ struct HomeView: View {
                 searchCredentials()
             }
             .navigationDestination(for: CredentialList.self) { list in
-                SearchResultListView(credentialList: list)
+                SearchResultListView(
+                    credentialList: list,
+                    copy: copyToClipboard
+                )
             }
         }
         .toastView(toast: $toast)
     }
 
-    private func copyPasswordToClipboard() {
-        UIPasteboard.general.string = self.password
-        // TODO: Add the password len into the toast
-        toast = Toast(message: "Copied password to clipboard")
+    private func copyToClipboard(_ content: String) {
+        UIPasteboard.general.string = content
+        // TODO: Add the password len, description into the toast?
+        toast = Toast(message: "Copied to clipboard")
     }
     
     private func searchCredentials() {
