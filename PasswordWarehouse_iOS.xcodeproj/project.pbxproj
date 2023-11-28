@@ -50,6 +50,7 @@
 		C9B2B2272B06A63B00983569 /* PasswordWarehouse_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2262B06A63B00983569 /* PasswordWarehouse_iOSTests.swift */; };
 		C9B2B2312B06A63B00983569 /* PasswordWarehouse_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2302B06A63B00983569 /* PasswordWarehouse_iOSUITests.swift */; };
 		C9B2B2332B06A63B00983569 /* PasswordWarehouse_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2322B06A63B00983569 /* PasswordWarehouse_iOSUITestsLaunchTests.swift */; };
+		C9F2B1642B15EB3B003AADF6 /* CenterModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1632B15EB3B003AADF6 /* CenterModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		C9B2B22C2B06A63B00983569 /* PasswordWarehouse_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordWarehouse_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B2B2302B06A63B00983569 /* PasswordWarehouse_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWarehouse_iOSUITests.swift; sourceTree = "<group>"; };
 		C9B2B2322B06A63B00983569 /* PasswordWarehouse_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWarehouse_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C9F2B1632B15EB3B003AADF6 /* CenterModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			children = (
 				C9A03E902B096A6B00A42A1F /* VerticalLabeledContentStyle.swift */,
 				C9A03E992B09B49F00A42A1F /* ColorExtension.swift */,
+				C9F2B1632B15EB3B003AADF6 /* CenterModifier.swift */,
 			);
 			path = Styling;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				C90CB19E2B129FB600A8BC7F /* KumaPreferenceItem.swift in Sources */,
 				C90CB1932B119B4F00A8BC7F /* KumaLabelWithCopy.swift in Sources */,
 				C90CB1982B11CE7000A8BC7F /* Item.swift in Sources */,
+				C9F2B1642B15EB3B003AADF6 /* CenterModifier.swift in Sources */,
 				C90CB17A2B10B3C900A8BC7F /* LocalFileCredentialRepo.swift in Sources */,
 				C9A03E9C2B09BA2700A42A1F /* ViewExtension.swift in Sources */,
 				C90CB1A02B13410F00A8BC7F /* KumaTogglePreference.swift in Sources */,
