@@ -15,6 +15,7 @@ struct KumaPreferenceItem: View {
     private let trailingItemSize: CGFloat = 44
     var text: String
     var description: String?
+    var clickAction: () -> Void
     
     var body: some View {
         HStack {
@@ -31,16 +32,21 @@ struct KumaPreferenceItem: View {
                 .foregroundColor(.lightGray)
                 .frame(width: trailingItemSize)
         }
+        .onTapGesture(perform: clickAction)
     }
 }
 
 #Preview {
     List {
         KumaPreferenceItem(
-            text: "Notifications", description: "Enabled (Receiving 20 types)"
+            text: "Notifications",
+            description: "Enabled (Receiving 20 types)",
+            clickAction: {}
         )
         KumaPreferenceItem(
-            text: "Search history", description: "Recent searches saved"
+            text: "Search history",
+            description: "Recent searches saved",
+            clickAction: {}
         )
     }
     .listStyle(.grouped)

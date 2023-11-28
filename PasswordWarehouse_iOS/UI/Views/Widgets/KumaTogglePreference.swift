@@ -30,7 +30,8 @@ struct KumaTogglePreference: View {
 #Preview {
     List {
         KumaPreferenceItem(
-            text: "Email preferences"
+            text: "Email preferences",
+            clickAction: {}
         )
         KumaTogglePreference(
             isToggleOn: .constant(true),

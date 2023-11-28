@@ -23,10 +23,12 @@ struct SettingsView: View {
 
             Section(header: Text("Import & Export").font(.headline)) {
                 KumaPreferenceItem(
-                    text: "Import"
+                    text: "Import",
+                    clickAction: {}
                 )
                 KumaPreferenceItem(
-                    text: "Export"
+                    text: "Export",
+                    clickAction: {}
                 )
             }
             
