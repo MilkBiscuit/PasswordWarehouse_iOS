@@ -32,6 +32,7 @@ struct KumaPreferenceItem: View {
                 .foregroundColor(.lightGray)
                 .frame(width: trailingItemSize)
         }
+        .contentShape(Rectangle()) // Without this line spacer is not clickable
         .onTapGesture(perform: clickAction)
     }
 }

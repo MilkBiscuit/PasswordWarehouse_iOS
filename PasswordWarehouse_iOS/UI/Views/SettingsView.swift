@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct SettingsView: View {
+
+    @State private var importing = false
+    @State private var exporting = false
+    @State private var document = TextDocument(text: "Hello World!")
+
     var body: some View {
         List {
             Spacer(minLength: 50)
@@ -24,11 +29,11 @@ struct SettingsView: View {
             Section(header: Text("Import & Export").font(.headline)) {
                 KumaPreferenceItem(
                     text: "Import",
-                    clickAction: {}
+                    clickAction: {importing = true}
                 )
                 KumaPreferenceItem(
                     text: "Export",
-                    clickAction: {}
+                    clickAction: {exporting = true}
                 )
             }
             
@@ -45,6 +50,30 @@ struct SettingsView: View {
             .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
+        .fileExporter(
+            isPresented: $exporting,
+            document: document,
+            contentType: .plainText,
+            defaultFilename: "Passwords.json"
+        ) { result in
+            switch result {
+            case .success(let file):
+                print("Export \(file) success")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        .fileImporter(
+            isPresented: $importing,
+            allowedContentTypes: [.plainText]
+        ) { result in
+            switch result {
+            case .success(let file):
+                print("Import \(file) success")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
