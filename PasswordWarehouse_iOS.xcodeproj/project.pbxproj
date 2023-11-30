@@ -50,6 +50,8 @@
 		C9B2B2272B06A63B00983569 /* PasswordWarehouse_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2262B06A63B00983569 /* PasswordWarehouse_iOSTests.swift */; };
 		C9B2B2312B06A63B00983569 /* PasswordWarehouse_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2302B06A63B00983569 /* PasswordWarehouse_iOSUITests.swift */; };
 		C9B2B2332B06A63B00983569 /* PasswordWarehouse_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2322B06A63B00983569 /* PasswordWarehouse_iOSUITestsLaunchTests.swift */; };
+		C9C4ABBE2B18F46F00408786 /* TextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4ABBD2B18F46F00408786 /* TextDocument.swift */; };
+		C9C4ABC02B18F51500408786 /* ExportFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4ABBF2B18F51500408786 /* ExportFileView.swift */; };
 		C9F2B1642B15EB3B003AADF6 /* CenterModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1632B15EB3B003AADF6 /* CenterModifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +114,8 @@
 		C9B2B22C2B06A63B00983569 /* PasswordWarehouse_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordWarehouse_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B2B2302B06A63B00983569 /* PasswordWarehouse_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWarehouse_iOSUITests.swift; sourceTree = "<group>"; };
 		C9B2B2322B06A63B00983569 /* PasswordWarehouse_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWarehouse_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C9C4ABBD2B18F46F00408786 /* TextDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDocument.swift; sourceTree = "<group>"; };
+		C9C4ABBF2B18F51500408786 /* ExportFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportFileView.swift; sourceTree = "<group>"; };
 		C9F2B1632B15EB3B003AADF6 /* CenterModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +168,7 @@
 			children = (
 				C90CB1742B10AAE500A8BC7F /* CredentialItem.swift */,
 				C90CB1872B11426900A8BC7F /* CipherBook.swift */,
+				C9C4ABBD2B18F46F00408786 /* TextDocument.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */,
 				C9A03E8D2B09601400A42A1F /* SettingsView.swift */,
 				C90CB18E2B116FA500A8BC7F /* SearchResultListView.swift */,
+				C9C4ABBF2B18F51500408786 /* ExportFileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 				C9A03E9C2B09BA2700A42A1F /* ViewExtension.swift in Sources */,
 				C90CB1A02B13410F00A8BC7F /* KumaTogglePreference.swift in Sources */,
 				C90CB1962B11C22400A8BC7F /* PersistentFileHelper.swift in Sources */,
+				C9C4ABBE2B18F46F00408786 /* TextDocument.swift in Sources */,
 				C90CB1882B11426900A8BC7F /* CipherBook.swift in Sources */,
 				C90CB17D2B10B42000A8BC7F /* BuildContainer.swift in Sources */,
 				C90CB1752B10AAE500A8BC7F /* CredentialItem.swift in Sources */,
@@ -493,6 +500,7 @@
 				C90CB1812B10B66000A8BC7F /* Resolver.swift in Sources */,
 				C90CB18F2B116FA500A8BC7F /* SearchResultListView.swift in Sources */,
 				C90CB1722B10A8BC00A8BC7F /* ICredentialRepository.swift in Sources */,
+				C9C4ABC02B18F51500408786 /* ExportFileView.swift in Sources */,
 				C9B2B2132B06A63900983569 /* PasswordWarehouse_iOSApp.swift in Sources */,
 				C90CB17F2B10B64900A8BC7F /* Inject.swift in Sources */,
 				C9A0C0552B0A0D4E00F560E3 /* Decrypt.swift in Sources */,
