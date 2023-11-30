@@ -51,6 +51,7 @@
 		C9B2B2312B06A63B00983569 /* PasswordWarehouse_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2302B06A63B00983569 /* PasswordWarehouse_iOSUITests.swift */; };
 		C9B2B2332B06A63B00983569 /* PasswordWarehouse_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B2B2322B06A63B00983569 /* PasswordWarehouse_iOSUITestsLaunchTests.swift */; };
 		C9C4ABBE2B18F46F00408786 /* TextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4ABBD2B18F46F00408786 /* TextDocument.swift */; };
+		C9C4ABC22B190BEE00408786 /* ExportCredentialsUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4ABC12B190BEE00408786 /* ExportCredentialsUC.swift */; };
 		C9F2B1642B15EB3B003AADF6 /* CenterModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1632B15EB3B003AADF6 /* CenterModifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,7 @@
 		C9B2B2302B06A63B00983569 /* PasswordWarehouse_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWarehouse_iOSUITests.swift; sourceTree = "<group>"; };
 		C9B2B2322B06A63B00983569 /* PasswordWarehouse_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordWarehouse_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C9C4ABBD2B18F46F00408786 /* TextDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDocument.swift; sourceTree = "<group>"; };
+		C9C4ABC12B190BEE00408786 /* ExportCredentialsUC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportCredentialsUC.swift; sourceTree = "<group>"; };
 		C9F2B1632B15EB3B003AADF6 /* CenterModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				C90CB1822B10B7E600A8BC7F /* StoreCredentialUC.swift */,
+				C9C4ABC12B190BEE00408786 /* ExportCredentialsUC.swift */,
 				C90CB1892B1142BE00A8BC7F /* SearchCredentialUC.swift */,
 			);
 			path = UseCase;
@@ -470,6 +473,7 @@
 			files = (
 				C90CB1832B10B7E600A8BC7F /* StoreCredentialUC.swift in Sources */,
 				C9B2B2152B06A63900983569 /* ContentView.swift in Sources */,
+				C9C4ABC22B190BEE00408786 /* ExportCredentialsUC.swift in Sources */,
 				C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */,
 				C9A03E962B09A77800A42A1F /* KumaTextField.swift in Sources */,
 				C90CB18A2B1142BE00A8BC7F /* SearchCredentialUC.swift in Sources */,

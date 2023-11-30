@@ -19,6 +19,9 @@ func buildContainer() -> Container {
     }.inObjectScope(.container)
     
     // Use case
+    container.register(ExportCredentialsUC.self) { _  in
+        return ExportCredentialsUC()
+    }.inObjectScope(.container)
     container.register(StoreCredentialUC.self) { _  in
         return StoreCredentialUC()
     }.inObjectScope(.container)

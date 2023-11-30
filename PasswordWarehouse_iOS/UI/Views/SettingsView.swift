@@ -11,7 +11,10 @@ struct SettingsView: View {
 
     @State private var importing = false
     @State private var exporting = false
-    @State private var document = TextDocument(text: "Hello World!")
+    @State private var document = TextDocument(text: "")
+    
+    @Inject
+    private var exportCredentialsUC: ExportCredentialsUC
 
     var body: some View {
         List {
@@ -33,7 +36,15 @@ struct SettingsView: View {
                 )
                 KumaPreferenceItem(
                     text: "Export",
-                    clickAction: {exporting = true}
+                    clickAction: {
+                        Task {
+                            guard let fileContent = await exportCredentialsUC.invoke() else {
+                                return
+                            }
+                            document = TextDocument(text: fileContent)
+                            exporting = true
+                        }
+                    }
                 )
             }
             

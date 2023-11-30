@@ -26,6 +26,15 @@ class LocalFileCredentialRepo: ICredentialRepository {
     private static func fileURL() -> URL {
         return PersistentFileHelper.fileURL(fileName: "credentials.json")
     }
+    
+    func exportAllCredentials() async -> String? {
+        guard let data = await PersistentFileHelper.readFromFile(fileUrl: Self.fileURL()) else {
+            return nil
+        }
+        let fileContent = String(decoding: data, as: UTF8.self)
+
+        return fileContent
+    }
 
     func remove(credential: EncryptedCredentialItem) async -> Bool {
         guard cachedBook.removeValue(forKey: credential.id) != nil
