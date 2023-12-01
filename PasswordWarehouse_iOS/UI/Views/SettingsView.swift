@@ -15,6 +15,8 @@ struct SettingsView: View {
     
     @Inject
     private var exportCredentialsUC: ExportCredentialsUC
+    @Inject
+    private var importCrendentialsUC: ImportCredentialsUC
 
     var body: some View {
         List {
@@ -32,13 +34,15 @@ struct SettingsView: View {
             Section(header: Text("Import & Export").font(.headline)) {
                 KumaPreferenceItem(
                     text: "Import",
-                    clickAction: {importing = true}
+                    clickAction: { importing = true }
                 )
                 KumaPreferenceItem(
                     text: "Export",
                     clickAction: {
                         Task {
-                            guard let fileContent = await exportCredentialsUC.invoke() else {
+                            guard let fileContent = await exportCredentialsUC.invoke(
+                                masterPassword: "123456"
+                            ) else {
                                 return
                             }
                             document = TextDocument(text: fileContent)
@@ -80,7 +84,10 @@ struct SettingsView: View {
         ) { result in
             switch result {
             case .success(let file):
-                print("Import \(file) success")
+                Task {
+                    let importCount = await importCrendentialsUC.invoke(fileUrl: file, masterPassword: "2hFg8-T-jCFh")
+                    print("Imported \(importCount) passwords.")
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }

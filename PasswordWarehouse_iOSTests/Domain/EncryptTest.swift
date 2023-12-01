@@ -20,14 +20,13 @@ final class EncryptTest: XCTestCase {
     }
 
     func testEncryptSameTextWithSameKey() throws {
-        // Given 2 exact same text strings
-        let text_1 = "Hello World"
-        let text_2 = "Hello World"
+        // Given exact same text string and secret
+        let text = "Hello World"
         let secret = "123456"
 
-        // When encrypt them
-        let cipherText_1 = Encrypt.encryptString(message: text_1, with: secret)
-        let cipherText_2 = Encrypt.encryptString(message: text_2, with: secret)
+        // When encrypt the string twice
+        let cipherText_1 = Encrypt.encryptString(message: text, with: secret)
+        let cipherText_2 = Encrypt.encryptString(message: text, with: secret)
         print("cipher text 1: " + cipherText_1)
         print("cipher text 2: " + cipherText_2)
         
