@@ -13,11 +13,11 @@ struct KumaPasswordField: View {
     private let labelText: String = "Password"
     private let labelImage: String = "rectangle.and.pencil.and.ellipsis"
 
-    private var copyToClipboard: () -> Void
+    private var copyToClipboard: VoidCallback
     @Binding private var password: String
     @State private var isSecured: Bool = false
     
-    init(text: Binding<String>, copy callback: @escaping () -> Void) {
+    init(text: Binding<String>, copy callback: @escaping VoidCallback) {
         self._password = text
         self.copyToClipboard = callback
         self.iconPanelWidth = iconWidth * 2

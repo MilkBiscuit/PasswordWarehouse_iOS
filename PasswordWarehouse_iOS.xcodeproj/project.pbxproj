@@ -30,6 +30,7 @@
 		C90CB1A02B13410F00A8BC7F /* KumaTogglePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB19F2B13410E00A8BC7F /* KumaTogglePreference.swift */; };
 		C95AA60E2B19CA020017F8F6 /* DecryptTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95AA60D2B19CA020017F8F6 /* DecryptTest.swift */; };
 		C95AA6102B1A4D340017F8F6 /* KumaTextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95AA60F2B1A4D340017F8F6 /* KumaTextFieldAlert.swift */; };
+		C95AA6122B1A5EED0017F8F6 /* TypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95AA6112B1A5EED0017F8F6 /* TypeExtension.swift */; };
 		C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E892B095FE100A42A1F /* HomeView.swift */; };
 		C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */; };
 		C9A03E8E2B09601400A42A1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* SettingsView.swift */; };
@@ -96,6 +97,7 @@
 		C90CB19F2B13410E00A8BC7F /* KumaTogglePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaTogglePreference.swift; sourceTree = "<group>"; };
 		C95AA60D2B19CA020017F8F6 /* DecryptTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecryptTest.swift; sourceTree = "<group>"; };
 		C95AA60F2B1A4D340017F8F6 /* KumaTextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaTextFieldAlert.swift; sourceTree = "<group>"; };
+		C95AA6112B1A5EED0017F8F6 /* TypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeExtension.swift; sourceTree = "<group>"; };
 		C9A03E892B095FE100A42A1F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
 		C9A03E8D2B09601400A42A1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				C90CB1852B113EB700A8BC7F /* LumberJack.swift */,
 				C90CB1952B11C22400A8BC7F /* PersistentFileHelper.swift */,
+				C95AA6112B1A5EED0017F8F6 /* TypeExtension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C90CB1832B10B7E600A8BC7F /* StoreCredentialUC.swift in Sources */,
+				C95AA6122B1A5EED0017F8F6 /* TypeExtension.swift in Sources */,
 				C9B2B2152B06A63900983569 /* ContentView.swift in Sources */,
 				C9C4ABC22B190BEE00408786 /* ExportCredentialsUC.swift in Sources */,
 				C9C4ABC42B19124500408786 /* ImportCredentialsUC.swift in Sources */,

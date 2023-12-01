@@ -15,11 +15,11 @@ extension View {
     func textFieldAlert(
         isShowing: Binding<Bool>,
         description: String,
-        onPositive: @escaping (String) -> Void
+        onPositive: @escaping TextCallback
     ) -> some View {
         KumaTextFieldAlert(
-            isShowing: isShowing,
             presenting: self,
+            isShowing: isShowing,
             description: description,
             onPositive: onPositive
         )

@@ -14,9 +14,9 @@ struct KumaLabelWithCopy: View {
     private let copyIconSize: CGFloat = 44
     private var imageName: String
     private var text: String
-    private var copyToClipboard: () -> Void
+    private var copyToClipboard: VoidCallback
     
-    init(labelImage: String, text: String, copy: @escaping () -> Void) {
+    init(labelImage: String, text: String, copy: @escaping VoidCallback) {
         self.text = text
         self.imageName = labelImage
         self.copyToClipboard = copy

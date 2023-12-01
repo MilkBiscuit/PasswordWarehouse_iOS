@@ -15,7 +15,7 @@ struct KumaPreferenceItem: View {
     private let trailingItemSize: CGFloat = 44
     var text: String
     var description: String?
-    var clickAction: () -> Void
+    var clickAction: VoidCallback
     
     var body: some View {
         HStack {

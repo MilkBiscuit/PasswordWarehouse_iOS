@@ -14,7 +14,7 @@ typealias CredentialList = [CredentialItem]
 
 struct SearchResultListView: View {
     var credentialList: CredentialList
-    var copy: (String) -> Void
+    var copy: TextCallback
     
     var body: some View {
         List {

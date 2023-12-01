@@ -11,16 +11,13 @@ import SwiftUI
 
 struct KumaTextFieldAlert<Presenting>: View where Presenting: View {
 
-    @Binding var isShowing: Bool
     let presenting: Presenting
+    @Binding var isShowing: Bool
     let description: String
-    var onPositive: (String) -> Void
-    @Environment(\.colorScheme) var colorScheme
-    @State private var text: String = "Some default input"
+    var onPositive: TextCallback
+    @State private var text: String = ""
 
     var body: some View {
-        // TODO: The UI effect under dark mode
-//        let isDarkBg: Bool = colorScheme == .light
         GeometryReader { (deviceSize: GeometryProxy) in
             ZStack {
                 self.presenting.disabled(isShowing)
@@ -29,7 +26,7 @@ struct KumaTextFieldAlert<Presenting>: View where Presenting: View {
                     Spacer().frame(height: 30)
                     
                     // TODO: Use secure text field
-                    TextField(self.description, text: self.$text)
+                    TextField("e.g. P@ssw0rd_88", text: self.$text)
                         .textFieldStyle(.roundedBorder)
 
                     Spacer().frame(height: 30)
@@ -45,12 +42,11 @@ struct KumaTextFieldAlert<Presenting>: View where Presenting: View {
                 }
                 .padding([.horizontal], 24)
                 .padding([.vertical], 16)
-                .background(.background)
+                .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 25.0))
                 .frame(
                     width: deviceSize.size.width * 0.9,
                     height: deviceSize.size.height * 0.9
                 )
-                .shadow(radius: 100)
                 .opacity(self.isShowing ? 1 : 0)
             }
         }
@@ -65,9 +61,9 @@ struct KumaTextFieldAlertPreview : View {
      var body: some View {
          NavigationView {
              Rectangle()
-                 .frame(width: 100, height: 100)
-                 .foregroundColor(.blue)
-                 .navigationBarTitle(Text("Any random view"), displayMode: .automatic)
+                 .frame(width: 150, height: 150)
+                 .foregroundColor(.orange)
+                 .navigationBarTitle(Text("An orange square"), displayMode: .automatic)
          }
          .textFieldAlert(
              isShowing: $isShowing,
