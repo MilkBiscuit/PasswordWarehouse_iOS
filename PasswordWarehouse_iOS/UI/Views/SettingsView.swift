@@ -11,6 +11,8 @@ struct SettingsView: View {
 
     @State private var importing = false
     @State private var exporting = false
+    @State private var askingPasswordForExport = false
+    @State private var askingPasswordForImport = false
     @State private var document = TextDocument(text: "")
     
     @Inject
@@ -19,6 +21,11 @@ struct SettingsView: View {
     private var importCrendentialsUC: ImportCredentialsUC
 
     var body: some View {
+        let askingPasswordBind = Binding<Bool>(
+            get: { self.askingPasswordForExport || self.askingPasswordForImport },
+            set: { _ in self.askingPasswordForExport = false; self.askingPasswordForImport = false }
+        )
+
         List {
             Spacer(minLength: 50)
                 .listRowSeparator(.hidden)
@@ -34,21 +41,11 @@ struct SettingsView: View {
             Section(header: Text("Import & Export").font(.headline)) {
                 KumaPreferenceItem(
                     text: "Import",
-                    clickAction: { importing = true }
+                    clickAction: { askingPasswordForImport = true }
                 )
                 KumaPreferenceItem(
                     text: "Export",
-                    clickAction: {
-                        Task {
-                            guard let fileContent = await exportCredentialsUC.invoke(
-                                masterPassword: "123456"
-                            ) else {
-                                return
-                            }
-                            document = TextDocument(text: fileContent)
-                            exporting = true
-                        }
-                    }
+                    clickAction: { askingPasswordForExport = true }
                 )
             }
             
@@ -91,6 +88,39 @@ struct SettingsView: View {
             case .failure(let error):
                 print(error.localizedDescription)
             }
+        }
+        .textFieldAlert(
+            isShowing: askingPasswordBind,
+            description: "Please input master password\n(Note: this will be asked for import).",
+            onPositive: onPasswordEntered
+        )
+    }
+    
+    private func onPasswordEntered(userInput: String) {
+        if (userInput.isEmpty) {
+            // TODO: Show a toast in parent
+            print("userInput empty!")
+            
+            return
+        }
+        
+        if (askingPasswordForExport) {
+            onPasswordEnteredForExport(userInput)
+        } else if (askingPasswordForImport) {
+            // TODO: import
+        }
+    }
+    
+    private func onPasswordEnteredForExport(_ userInput: String) {
+        Task {
+            guard let fileContent = await exportCredentialsUC.invoke(
+                masterPassword: userInput
+            ) else {
+                print("Nothing to export!")
+                return
+            }
+            document = TextDocument(text: fileContent)
+            exporting = true
         }
     }
 }

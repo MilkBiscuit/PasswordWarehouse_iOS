@@ -11,8 +11,8 @@ import SwiftUI
 struct KumaTextField: View {
     
     @Binding private var text: String
-    private var labelImage: String
-    private var title: String
+    private let labelImage: String
+    private let title: String
     
     init(_ title: String, labelImage imageName: String = "", text: Binding<String>) {
         self.title = title
