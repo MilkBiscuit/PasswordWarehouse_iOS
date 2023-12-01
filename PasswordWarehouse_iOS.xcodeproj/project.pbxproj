@@ -29,6 +29,7 @@
 		C90CB19E2B129FB600A8BC7F /* KumaPreferenceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB19D2B129FB600A8BC7F /* KumaPreferenceItem.swift */; };
 		C90CB1A02B13410F00A8BC7F /* KumaTogglePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB19F2B13410E00A8BC7F /* KumaTogglePreference.swift */; };
 		C95AA60E2B19CA020017F8F6 /* DecryptTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95AA60D2B19CA020017F8F6 /* DecryptTest.swift */; };
+		C95AA6102B1A4D340017F8F6 /* KumaTextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95AA60F2B1A4D340017F8F6 /* KumaTextFieldAlert.swift */; };
 		C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E892B095FE100A42A1F /* HomeView.swift */; };
 		C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */; };
 		C9A03E8E2B09601400A42A1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* SettingsView.swift */; };
@@ -94,6 +95,7 @@
 		C90CB19D2B129FB600A8BC7F /* KumaPreferenceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaPreferenceItem.swift; sourceTree = "<group>"; };
 		C90CB19F2B13410E00A8BC7F /* KumaTogglePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaTogglePreference.swift; sourceTree = "<group>"; };
 		C95AA60D2B19CA020017F8F6 /* DecryptTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecryptTest.swift; sourceTree = "<group>"; };
+		C95AA60F2B1A4D340017F8F6 /* KumaTextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaTextFieldAlert.swift; sourceTree = "<group>"; };
 		C9A03E892B095FE100A42A1F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
 		C9A03E8D2B09601400A42A1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				C90CB1922B119B4F00A8BC7F /* KumaLabelWithCopy.swift */,
 				C90CB19D2B129FB600A8BC7F /* KumaPreferenceItem.swift */,
 				C90CB19F2B13410E00A8BC7F /* KumaTogglePreference.swift */,
+				C95AA60F2B1A4D340017F8F6 /* KumaTextFieldAlert.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				C90CB1932B119B4F00A8BC7F /* KumaLabelWithCopy.swift in Sources */,
 				C90CB1982B11CE7000A8BC7F /* Item.swift in Sources */,
 				C9F2B1642B15EB3B003AADF6 /* CenterModifier.swift in Sources */,
+				C95AA6102B1A4D340017F8F6 /* KumaTextFieldAlert.swift in Sources */,
 				C90CB17A2B10B3C900A8BC7F /* LocalFileCredentialRepo.swift in Sources */,
 				C9A03E9C2B09BA2700A42A1F /* ViewExtension.swift in Sources */,
 				C90CB1A02B13410F00A8BC7F /* KumaTogglePreference.swift in Sources */,
