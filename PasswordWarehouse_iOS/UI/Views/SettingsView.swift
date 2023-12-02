@@ -12,7 +12,7 @@ struct SettingsView: View {
     @State private var importing = false
     @State private var exporting = false
     @State private var askingPasswordForExport = false
-    @State private var askingPasswordForImport = false
+    @State private var fileForImport: URL? = nil
     @State private var document = TextDocument(text: "")
     
     @Inject
@@ -22,9 +22,14 @@ struct SettingsView: View {
 
     var body: some View {
         let askingPasswordBind = Binding<Bool>(
-            get: { self.askingPasswordForExport || self.askingPasswordForImport },
-            set: { _ in self.askingPasswordForExport = false; self.askingPasswordForImport = false }
+            get: { self.askingPasswordForExport || self.fileForImport != nil},
+            set: { _ in self.askingPasswordForExport = false; self.fileForImport = nil }
         )
+        let passwordPopupEntryText = if (askingPasswordForExport) {
+            "Import requires this password, so don't forget it."
+        } else if (fileForImport != nil) {
+            "What password did you use during export?"
+        } else { "" }
 
         List {
             Spacer(minLength: 50)
@@ -41,7 +46,7 @@ struct SettingsView: View {
             Section(header: Text("Import & Export").font(.headline)) {
                 KumaPreferenceItem(
                     text: "Import",
-                    clickAction: { askingPasswordForImport = true }
+                    clickAction: { importing = true }
                 )
                 KumaPreferenceItem(
                     text: "Export",
@@ -81,17 +86,14 @@ struct SettingsView: View {
         ) { result in
             switch result {
             case .success(let file):
-                Task {
-                    let importCount = await importCrendentialsUC.invoke(fileUrl: file, masterPassword: "2hFg8-T-jCFh")
-                    print("Imported \(importCount) passwords.")
-                }
+                fileForImport = file
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
         .textFieldAlert(
             isShowing: askingPasswordBind,
-            description: "Please input master password\n(Note: this will be asked for import).",
+            description: passwordPopupEntryText,
             onPositive: onPasswordEntered
         )
     }
@@ -106,8 +108,8 @@ struct SettingsView: View {
         
         if (askingPasswordForExport) {
             onPasswordEnteredForExport(userInput)
-        } else if (askingPasswordForImport) {
-            // TODO: import
+        } else if (fileForImport != nil) {
+            onPasswordEnteredForImport(userInput)
         }
     }
     
@@ -121,6 +123,17 @@ struct SettingsView: View {
             }
             document = TextDocument(text: fileContent)
             exporting = true
+        }
+    }
+    
+    private func onPasswordEnteredForImport(_ userInput: String) {
+        guard let fileUrl = fileForImport else {
+            return
+        }
+        Task {
+            let importCount = await importCrendentialsUC.invoke(
+                fileUrl: fileUrl, masterPassword: userInput)
+            print("Imported \(importCount) passwords.")
         }
     }
 }

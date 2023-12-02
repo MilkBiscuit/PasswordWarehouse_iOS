@@ -21,12 +21,12 @@ struct KumaTextFieldAlert<Presenting>: View where Presenting: View {
         GeometryReader { (deviceSize: GeometryProxy) in
             ZStack {
                 self.presenting.disabled(isShowing)
-                VStack {
+                VStack (alignment: .leading) {
                     Text(self.description).font(.headline)
                     Spacer().frame(height: 30)
                     
                     // TODO: Use secure text field
-                    TextField("e.g. P@ssw0rd_88", text: self.$text)
+                    TextField("Please input password.", text: self.$text)
                         .textFieldStyle(.roundedBorder)
 
                     Spacer().frame(height: 30)
@@ -35,10 +35,11 @@ struct KumaTextFieldAlert<Presenting>: View where Presenting: View {
                         Button(action: {
                             onPositive(self.text)
                             withAnimation { self.isShowing = false }
+                            self.text = ""
                         }) {
                             Text("OK")
                         }
-                    }
+                    }.frame(maxWidth: .infinity)
                 }
                 .padding([.horizontal], 24)
                 .padding([.vertical], 16)
@@ -67,7 +68,7 @@ struct KumaTextFieldAlertPreview : View {
          }
          .textFieldAlert(
              isShowing: $isShowing,
-             description: "Please input master password\n(Note: this will be asked for import).",
+             description: "Import requires this password, so don't forget!",
              onPositive: {_ in }
          )
      }
