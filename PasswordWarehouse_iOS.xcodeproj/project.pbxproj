@@ -214,6 +214,7 @@
 		C9A03E872B095F8800A42A1F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C9B2B2142B06A63900983569 /* ContentView.swift */,
 				C9A03E8F2B096A1F00A42A1F /* Styling */,
 				C9A03E882B095F9000A42A1F /* Views */,
 			);
@@ -303,7 +304,6 @@
 			children = (
 				C90CB1702B10A63700A8BC7F /* Adapter */,
 				C9B2B2182B06A63B00983569 /* Assets.xcassets */,
-				C9B2B2142B06A63900983569 /* ContentView.swift */,
 				C90CB17B2B10B40F00A8BC7F /* DI */,
 				C9A03E9D2B0A08B800A42A1F /* Domain */,
 				C90CB1972B11CE7000A8BC7F /* Item.swift */,
