@@ -8,9 +8,6 @@
 import SwiftUI
 
 extension View {
-    func toastView() -> some View {
-        self.modifier(ToastModifier())
-    }
     
     func textFieldAlert(
         isShowing: Binding<Bool>,
@@ -23,5 +20,9 @@ extension View {
             description: description,
             onPositive: onPositive
         )
+    }
+
+    func toastView() -> some View {
+        self.modifier(ToastModifier())
     }
 }

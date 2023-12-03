@@ -13,15 +13,15 @@ struct KumaPasswordField: View {
     private let labelText: String = "Password"
     private let labelImage: String = "rectangle.and.pencil.and.ellipsis"
 
-    private var copyToClipboard: VoidCallback
     @Binding private var password: String
     @State private var isSecured: Bool = false
+    private var showCopyIcon: Bool
     @Environment(\.kumaToastText) var toastText: Binding<String?>
     
-    init(text: Binding<String>, copy callback: @escaping VoidCallback) {
+    init(text: Binding<String>, showCopyIcon: Bool = true) {
         self._password = text
-        self.copyToClipboard = callback
-        self.iconPanelWidth = iconWidth * 2
+        self.showCopyIcon = showCopyIcon
+        self.iconPanelWidth = showCopyIcon ? iconWidth * 2 : iconWidth
     }
     
     var body: some View {
@@ -51,14 +51,13 @@ struct KumaPasswordField: View {
                         .accentColor(.gray)
                 }
                 .frame(minWidth: iconWidth, maxHeight: .infinity)
-                Button(action: {
-                    // TODO: copyToClipboard can be removed
-                    toastText.wrappedValue = "AAAA"
-                }) {
-                    Image(systemName: "doc.on.doc")
-                        .accentColor(.gray)
+                if (showCopyIcon) {
+                    Button(action: copyPasswordToClipboard) {
+                        Image(systemName: "doc.on.doc")
+                            .accentColor(.gray)
+                    }
+                    .frame(minWidth: iconWidth, maxHeight: .infinity)
                 }
-                .frame(minWidth: iconWidth, maxHeight: .infinity)
             }
             .frame(minWidth: iconPanelWidth, maxHeight: .infinity)
             .background(Color.kumaTealLight)
@@ -66,9 +65,15 @@ struct KumaPasswordField: View {
         // true means child views should only take the space they need
         .fixedSize(horizontal: false, vertical: true)
     }
+    
+    private func copyPasswordToClipboard() {
+        UIPasteboard.general.string = self.password
+        let maskedPassword = String(repeating: "*", count: self.password.count)
+        toastText.wrappedValue = "Copied \(maskedPassword) to clipboard"
+    }
 
 }
 
 #Preview {
-    KumaPasswordField(text: .constant("AAA"), copy: {})
+    KumaPasswordField(text: .constant("AAA"))
 }

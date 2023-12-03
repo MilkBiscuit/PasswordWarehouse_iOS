@@ -25,9 +25,7 @@ struct KumaTextFieldAlert<Presenting>: View where Presenting: View {
                     Text(self.description).font(.headline)
                     Spacer().frame(height: 30)
                     
-                    // TODO: Use secure text field
-                    TextField("Please input password.", text: self.$text)
-                        .textFieldStyle(.roundedBorder)
+                    KumaPasswordField(text: self.$text, showCopyIcon: false)
 
                     Spacer().frame(height: 30)
 

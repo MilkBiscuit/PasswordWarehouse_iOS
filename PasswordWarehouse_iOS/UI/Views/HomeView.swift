@@ -34,7 +34,7 @@ struct HomeView: View {
                 KumaTextField(
                     "Account Number / Email / Username", labelImage: "envelope", text: $username
                 ).textInputAutocapitalization(TextInputAutocapitalization.never)
-                KumaPasswordField(text: $password, copy: {copyToClipboard(self.password)})
+                KumaPasswordField(text: $password)
                 
                 Spacer().frame(height: 20)
 
@@ -63,7 +63,6 @@ struct HomeView: View {
 
     private func copyToClipboard(_ content: String) {
         UIPasteboard.general.string = content
-        // TODO: Add the password len, description into the toast?
         toastText.wrappedValue = "Copied to clipboard"
     }
     

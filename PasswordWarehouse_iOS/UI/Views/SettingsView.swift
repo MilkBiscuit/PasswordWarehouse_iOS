@@ -14,6 +14,7 @@ struct SettingsView: View {
     @State private var askingPasswordForExport = false
     @State private var fileForImport: URL? = nil
     @State private var document = TextDocument(text: "")
+    @Environment(\.kumaToastText) var toastText: Binding<String?>
     
     @Inject
     private var exportCredentialsUC: ExportCredentialsUC
@@ -100,9 +101,7 @@ struct SettingsView: View {
     
     private func onPasswordEntered(userInput: String) {
         if (userInput.isEmpty) {
-            // TODO: Show a toast in parent
-            print("userInput empty!")
-            
+            toastText.wrappedValue = "Password can not be empty!"
             return
         }
         
@@ -118,7 +117,7 @@ struct SettingsView: View {
             guard let fileContent = await exportCredentialsUC.invoke(
                 masterPassword: userInput
             ) else {
-                print("Nothing to export!")
+                toastText.wrappedValue = "Nothing to export."
                 return
             }
             document = TextDocument(text: fileContent)
@@ -133,7 +132,7 @@ struct SettingsView: View {
         Task {
             let importCount = await importCrendentialsUC.invoke(
                 fileUrl: fileUrl, masterPassword: userInput)
-            print("Imported \(importCount) passwords.")
+            toastText.wrappedValue = "Imported \(importCount) password items."
         }
     }
 }
