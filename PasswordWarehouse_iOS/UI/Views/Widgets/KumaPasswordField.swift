@@ -16,6 +16,7 @@ struct KumaPasswordField: View {
     private var copyToClipboard: VoidCallback
     @Binding private var password: String
     @State private var isSecured: Bool = false
+    @Environment(\.kumaToastText) var toastText: Binding<String?>
     
     init(text: Binding<String>, copy callback: @escaping VoidCallback) {
         self._password = text
@@ -50,7 +51,10 @@ struct KumaPasswordField: View {
                         .accentColor(.gray)
                 }
                 .frame(minWidth: iconWidth, maxHeight: .infinity)
-                Button(action: copyToClipboard) {
+                Button(action: {
+                    // TODO: copyToClipboard can be removed
+                    toastText.wrappedValue = "AAAA"
+                }) {
                     Image(systemName: "doc.on.doc")
                         .accentColor(.gray)
                 }

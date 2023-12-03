@@ -42,7 +42,7 @@ struct KumaToastView: View {
 }
 
 struct ToastModifier: ViewModifier {
-    @Binding var toast: Toast?
+    @State var toastText: String? = nil
     @State private var workItem: DispatchWorkItem?
     
     func body(content: Content) -> some View {
@@ -51,44 +51,42 @@ struct ToastModifier: ViewModifier {
                 ZStack {
                     mainToastView()
                 }
-                    .animation(.spring(), value: toast)
+                    .animation(.spring(), value: toastText)
             )
-            .onChange(of: toast, { showToast() })
+            .environment(\.kumaToastText, $toastText)
+            .onChange(of: toastText, { showToast() })
     }
     
     @ViewBuilder func mainToastView() -> some View {
-        if let toast = toast {
+        if let toastMessage = toastText {
             VStack {
                 Spacer()
                 KumaToastView(
-                    text: toast.message
+                    text: toastMessage
                 )
-                Spacer().frame(height: 20)
+                Spacer().frame(height: 60)
             }
         }
     }
     
     private func showToast() {
-        guard let toast = toast else { return }
+        if (toastText == nil) { return }
         
-        UIImpactFeedbackGenerator(style: .light)
-            .impactOccurred()
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        let toastDuration: Double = 3
+        workItem?.cancel()
         
-        if toast.duration > 0 {
-            workItem?.cancel()
-            
-            let task = DispatchWorkItem {
-                dismissToast()
-            }
-            
-            workItem = task
-            DispatchQueue.main.asyncAfter(deadline: .now() + toast.duration, execute: task)
+        let task = DispatchWorkItem {
+            dismissToast()
         }
+        
+        workItem = task
+        DispatchQueue.main.asyncAfter(deadline: .now() + toastDuration, execute: task)
     }
     
     private func dismissToast() {
         withAnimation {
-            toast = nil
+            toastText = nil
         }
         
         workItem?.cancel()

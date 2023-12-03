@@ -31,6 +31,7 @@
 		C95AA60E2B19CA020017F8F6 /* DecryptTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95AA60D2B19CA020017F8F6 /* DecryptTest.swift */; };
 		C95AA6102B1A4D340017F8F6 /* KumaTextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95AA60F2B1A4D340017F8F6 /* KumaTextFieldAlert.swift */; };
 		C95AA6122B1A5EED0017F8F6 /* TypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95AA6112B1A5EED0017F8F6 /* TypeExtension.swift */; };
+		C95AA6182B1C18BA0017F8F6 /* KumaToastTextKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95AA6172B1C18BA0017F8F6 /* KumaToastTextKey.swift */; };
 		C9A03E8A2B095FE100A42A1F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E892B095FE100A42A1F /* HomeView.swift */; };
 		C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */; };
 		C9A03E8E2B09601400A42A1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A03E8D2B09601400A42A1F /* SettingsView.swift */; };
@@ -98,6 +99,7 @@
 		C95AA60D2B19CA020017F8F6 /* DecryptTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecryptTest.swift; sourceTree = "<group>"; };
 		C95AA60F2B1A4D340017F8F6 /* KumaTextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaTextFieldAlert.swift; sourceTree = "<group>"; };
 		C95AA6112B1A5EED0017F8F6 /* TypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeExtension.swift; sourceTree = "<group>"; };
+		C95AA6172B1C18BA0017F8F6 /* KumaToastTextKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaToastTextKey.swift; sourceTree = "<group>"; };
 		C9A03E892B095FE100A42A1F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9A03E8B2B095FFA00A42A1F /* GeneratePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratePasswordView.swift; sourceTree = "<group>"; };
 		C9A03E8D2B09601400A42A1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A03E9B2B09BA2700A42A1F /* ViewExtension.swift */,
+				C95AA6172B1C18BA0017F8F6 /* KumaToastTextKey.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				C9B2B2152B06A63900983569 /* ContentView.swift in Sources */,
 				C9C4ABC22B190BEE00408786 /* ExportCredentialsUC.swift in Sources */,
 				C9C4ABC42B19124500408786 /* ImportCredentialsUC.swift in Sources */,
+				C95AA6182B1C18BA0017F8F6 /* KumaToastTextKey.swift in Sources */,
 				C9A03E8C2B095FFA00A42A1F /* GeneratePasswordView.swift in Sources */,
 				C9A03E962B09A77800A42A1F /* KumaTextField.swift in Sources */,
 				C90CB18A2B1142BE00A8BC7F /* SearchCredentialUC.swift in Sources */,

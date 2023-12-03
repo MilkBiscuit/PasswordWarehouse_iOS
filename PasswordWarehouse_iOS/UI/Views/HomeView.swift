@@ -12,8 +12,8 @@ struct HomeView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var searchText: String = ""
-    @State private var toast: Toast? = nil
     @State private var navPath = NavigationPath()
+    @Environment(\.kumaToastText) var toastText: Binding<String?>
     
     @Inject
     private var storeCredentialUC: StoreCredentialUC
@@ -59,20 +59,19 @@ struct HomeView: View {
                 )
             }
         }
-        .toastView(toast: $toast)
     }
 
     private func copyToClipboard(_ content: String) {
         UIPasteboard.general.string = content
         // TODO: Add the password len, description into the toast?
-        toast = Toast(message: "Copied to clipboard")
+        toastText.wrappedValue = "Copied to clipboard"
     }
     
     private func searchCredentials() {
         let keyword = searchText
         let results = searchCredentialUC.invoke(website: keyword)
         if results.isEmpty {
-            toast = Toast(message: "No matched results.")
+            toastText.wrappedValue = "No matched results."
             return
         }
         let count = results.count
@@ -86,9 +85,12 @@ struct HomeView: View {
     }
 
     private func storeCredentials() {
-        if website.isEmpty { toast = Toast(message: "Website can't be empty."); return }
+        if website.isEmpty {
+            toastText.wrappedValue = "Website can't be empty."
+            return
+        }
         if username.isEmpty && password.isEmpty {
-            toast = Toast(message: "Username and password can't be both empty.")
+            toastText.wrappedValue = "Username and password can't be both empty."
             return
         }
         
