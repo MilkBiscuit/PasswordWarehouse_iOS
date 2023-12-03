@@ -71,8 +71,8 @@ struct SettingsView: View {
         .fileExporter(
             isPresented: $exporting,
             document: document,
-            contentType: .plainText,
-            defaultFilename: "Passwords.json"
+            contentType: .json,
+            defaultFilename: "Passwords"
         ) { result in
             switch result {
             case .success(let file):
@@ -83,7 +83,7 @@ struct SettingsView: View {
         }
         .fileImporter(
             isPresented: $importing,
-            allowedContentTypes: [.plainText]
+            allowedContentTypes: [.json, .plainText]
         ) { result in
             switch result {
             case .success(let file):
