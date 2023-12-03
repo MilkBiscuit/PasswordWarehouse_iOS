@@ -31,11 +31,17 @@ struct PersistentFileHelper {
     }
     
     static func readFromFile(fileUrl: URL) async -> Data? {
-        let task = Task<Data?, Error> {
-            return try? Data(contentsOf: fileUrl)
+        let task = Task<Data, Error> {
+            return try Data(contentsOf: fileUrl)
         }
-
-        return try? await task.value
+        
+        do {
+            return try await task.value
+        } catch {
+            print("readFromFile failed! \(fileUrl)")
+            print(error.localizedDescription)
+            return nil
+        }
     }
     
     static func writeToFile<T>(fileUrl: URL, value: T) async -> Bool where T: Encodable {

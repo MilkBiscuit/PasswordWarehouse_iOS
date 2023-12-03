@@ -14,9 +14,13 @@ struct ImportCredentialsUC {
     private var credentialRepo: ICredentialRepository
 
     func invoke(fileUrl: URL, masterPassword: String) async -> Int {
+        if (!fileUrl.startAccessingSecurityScopedResource()) {
+            print("startAccessingSecurityScopedResource failed.")
+        }
         guard let fileData = await PersistentFileHelper.readFromFile(fileUrl: fileUrl) else {
             return 0
         }
+        fileUrl.stopAccessingSecurityScopedResource()
         guard let cipherBook = try? JSONDecoder().decode(CipherBook.self, from: fileData) else {
             return 0
         }
