@@ -12,6 +12,7 @@ struct HomeView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var searchText: String = ""
+    @State private var generatingPassword = false
     @State private var navPath = NavigationPath()
     @Environment(\.kumaToastText) var toastText: Binding<String?>
     
@@ -36,11 +37,16 @@ struct HomeView: View {
                 ).textInputAutocapitalization(TextInputAutocapitalization.never)
                 KumaPasswordField(text: $password)
                 
+                // TODO: Make VStack, increase the width of Store button
                 Spacer().frame(height: 20)
-
+                Button("Generate Password") {
+                    generatingPassword.toggle()
+                }
+                Spacer().frame(height: 20)
                 Button(action: storeCredentials) {
                     Label("Store", systemImage: "square.and.arrow.down")
                 }
+                .buttonStyle(.borderedProminent)
             }
             .padding()
             .navigationBarTitleDisplayMode(.inline)
@@ -57,6 +63,9 @@ struct HomeView: View {
                     credentialList: list,
                     copy: copyToClipboard
                 )
+            }
+            .sheet(isPresented: $generatingPassword) {
+                GeneratePasswordView()
             }
         }
     }
