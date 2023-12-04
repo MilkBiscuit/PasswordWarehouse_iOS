@@ -59,6 +59,11 @@
 		C9C4ABBE2B18F46F00408786 /* TextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4ABBD2B18F46F00408786 /* TextDocument.swift */; };
 		C9C4ABC22B190BEE00408786 /* ExportCredentialsUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4ABC12B190BEE00408786 /* ExportCredentialsUC.swift */; };
 		C9C4ABC42B19124500408786 /* ImportCredentialsUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4ABC32B19124500408786 /* ImportCredentialsUC.swift */; };
+		C9C585DE2B1DD2720036E22E /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C585DD2B1DD2720036E22E /* PasswordGenerator.swift */; };
+		C9C585DF2B1DD2720036E22E /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C585DD2B1DD2720036E22E /* PasswordGenerator.swift */; };
+		C9C585E12B1DD2FC0036E22E /* PasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C585E02B1DD2FC0036E22E /* PasswordRule.swift */; };
+		C9C585E22B1DD2FC0036E22E /* PasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C585E02B1DD2FC0036E22E /* PasswordRule.swift */; };
+		C9C585E52B1DD8A70036E22E /* PasswordGeneratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C585E32B1DD8A70036E22E /* PasswordGeneratorTest.swift */; };
 		C9F2B1642B15EB3B003AADF6 /* CenterModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1632B15EB3B003AADF6 /* CenterModifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +135,9 @@
 		C9C4ABBD2B18F46F00408786 /* TextDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDocument.swift; sourceTree = "<group>"; };
 		C9C4ABC12B190BEE00408786 /* ExportCredentialsUC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportCredentialsUC.swift; sourceTree = "<group>"; };
 		C9C4ABC32B19124500408786 /* ImportCredentialsUC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportCredentialsUC.swift; sourceTree = "<group>"; };
+		C9C585DD2B1DD2720036E22E /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
+		C9C585E02B1DD2FC0036E22E /* PasswordRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRule.swift; sourceTree = "<group>"; };
+		C9C585E32B1DD8A70036E22E /* PasswordGeneratorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorTest.swift; sourceTree = "<group>"; };
 		C9F2B1632B15EB3B003AADF6 /* CenterModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +193,7 @@
 				C90CB1742B10AAE500A8BC7F /* CredentialItem.swift */,
 				C90CB1872B11426900A8BC7F /* CipherBook.swift */,
 				C9C4ABBD2B18F46F00408786 /* TextDocument.swift */,
+				C9C585E02B1DD2FC0036E22E /* PasswordRule.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +282,7 @@
 				C9A0C0522B0A0B6300F560E3 /* Encrypt.swift */,
 				C9A0C0542B0A0D4E00F560E3 /* Decrypt.swift */,
 				C90CB1712B10A8BC00A8BC7F /* ICredentialRepository.swift */,
+				C9C585DD2B1DD2720036E22E /* PasswordGenerator.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -281,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A0C0572B0A0E1400F560E3 /* EncryptTest.swift */,
+				C9C585E32B1DD8A70036E22E /* PasswordGeneratorTest.swift */,
 				C95AA60D2B19CA020017F8F6 /* DecryptTest.swift */,
 				C90A9E822B0B5D5900FD5F2D /* EncryptAndDecrypt.swift */,
 			);
@@ -525,11 +536,13 @@
 				C9A03E982B09AFBD00A42A1F /* KumaToastView.swift in Sources */,
 				C90CB1862B113EB700A8BC7F /* LumberJack.swift in Sources */,
 				C9A03E9A2B09B49F00A42A1F /* ColorExtension.swift in Sources */,
+				C9C585E12B1DD2FC0036E22E /* PasswordRule.swift in Sources */,
 				C90CB1812B10B66000A8BC7F /* Resolver.swift in Sources */,
 				C90CB18F2B116FA500A8BC7F /* SearchResultListView.swift in Sources */,
 				C90CB1722B10A8BC00A8BC7F /* ICredentialRepository.swift in Sources */,
 				C9B2B2132B06A63900983569 /* PasswordWarehouse_iOSApp.swift in Sources */,
 				C90CB17F2B10B64900A8BC7F /* Inject.swift in Sources */,
+				C9C585DE2B1DD2720036E22E /* PasswordGenerator.swift in Sources */,
 				C9A0C0552B0A0D4E00F560E3 /* Decrypt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,11 +553,14 @@
 			files = (
 				C90CB19C2B11D22F00A8BC7F /* CipherBook.swift in Sources */,
 				C9A0C0592B0A100D00F560E3 /* Encrypt.swift in Sources */,
+				C9C585E22B1DD2FC0036E22E /* PasswordRule.swift in Sources */,
 				C90CB19B2B11D22C00A8BC7F /* CredentialItem.swift in Sources */,
 				C9B2B2272B06A63B00983569 /* PasswordWarehouse_iOSTests.swift in Sources */,
 				C90A9E832B0B5D5900FD5F2D /* EncryptAndDecrypt.swift in Sources */,
 				C9A0C0582B0A0E1400F560E3 /* EncryptTest.swift in Sources */,
+				C9C585E52B1DD8A70036E22E /* PasswordGeneratorTest.swift in Sources */,
 				C9A0C05A2B0A101100F560E3 /* Decrypt.swift in Sources */,
+				C9C585DF2B1DD2720036E22E /* PasswordGenerator.swift in Sources */,
 				C95AA60E2B19CA020017F8F6 /* DecryptTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
