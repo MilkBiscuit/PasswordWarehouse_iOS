@@ -8,30 +8,39 @@
 import SwiftUI
 
 struct GeneratePasswordView: View {
+    let defaultRule = PasswordRule(
+        hasLowerCase: true, hasUpperCase: true, hasNumber: true, hasSymbol: false, length: 8
+    )
     @Environment(\.dismiss) var dismiss
     @State private var sheetHeight: CGFloat = .zero
-    @State private var hasUppercase: Bool = true
-    @State private var hasLowercase: Bool = true
-    @State private var hasNumber: Bool = true
-    @State private var hasSymbol: Bool = false
-    @State private var length = 10
-    
+    @State private var passwordRule: PasswordRule
+    @State private var password: String
+    var useAction: TextCallback
+
+    init(useAction: @escaping TextCallback) {
+        let initialPassword = PasswordGenerator.invoke(rule: defaultRule)
+        _password = State(initialValue: initialPassword)
+        _passwordRule = State(initialValue: defaultRule)
+        self.useAction = useAction
+    }
+
     var body: some View {
         VStack {
-            Toggle("Uppercase", isOn: $hasUppercase)
-            Toggle("Lowercase", isOn: $hasLowercase)
-            Toggle("Number", isOn: $hasNumber)
-            Toggle("Symbol", isOn: $hasSymbol)
-            Stepper("Length:  \(length)", value: $length, in: 4...20)
+            Toggle("Uppercase", isOn: $passwordRule.hasUpperCase)
+            Toggle("Lowercase", isOn: $passwordRule.hasLowerCase)
+            Toggle("Number", isOn: $passwordRule.hasNumber)
+            Toggle("Symbol", isOn: $passwordRule.hasSymbol)
+            Stepper("Length:  \(passwordRule.length)", value: $passwordRule.length, in: PasswordGenerator.passwordLenRange)
             Spacer().frame(height: 20)
-            KumaPasswordField(text: .constant("AABBCC"))
+            // TODO: use monospace font
+            KumaPasswordField(text: $password)
 
             Spacer().frame(height: 20)
-            Button(action: {}) {
+            Button(action: regenerate) {
                 Label("Generate", systemImage: "arrow.clockwise")
             }
             Spacer().frame(height: 20)
-            Button(action: { dismiss() }) {
+            Button(action: usePassword) {
                 Text("Use this password")
             }
             .buttonStyle(.borderedProminent)
@@ -47,8 +56,18 @@ struct GeneratePasswordView: View {
         }
         .presentationDetents([.height(sheetHeight)])
     }
+    
+    private func regenerate() {
+        let newPassword = PasswordGenerator.invoke(rule: passwordRule)
+        password = newPassword
+    }
+    
+    private func usePassword() {
+        useAction(password)
+        dismiss()
+    }
 }
 
 #Preview {
-    GeneratePasswordView()
+    GeneratePasswordView(useAction: {_ in})
 }

@@ -10,13 +10,14 @@
 import Foundation
 
 class PasswordGenerator {
-    static let lowercaseLetters: String = "abcdefghijkmnpqrstuvwxyz" // Remove l and o
-    static let uppercaseLetters: String = "ABCDEFGHJKLMNPQRSTUVWXYZ" // Remove I and O
-    static let numbers: String = "1234567890"
-    static let symbols: String = "@#_-=>|+*[:"
-    
+    static let passwordLenRange = 4...20
+    private static let lowercaseLetters: String = "abcdefghijkmnpqrstuvwxyz" // Remove l and o
+    private static let uppercaseLetters: String = "ABCDEFGHJKLMNPQRSTUVWXYZ" // Remove I and O
+    private static let numbers: String = "1234567890"
+    private static let symbols: String = "@#_-=>|+*[:"
+
     static func invoke(rule: PasswordRule) -> String {
-        precondition((4...20).contains(rule.length), "Password length has to be between 4 and 20.")
+        precondition(passwordLenRange.contains(rule.length), "Password length has to be between 4 and 20.")
         
         var passwordBuilder = ""
         var allPossibleChars = ""

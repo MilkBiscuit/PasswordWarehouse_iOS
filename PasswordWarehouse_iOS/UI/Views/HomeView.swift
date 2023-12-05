@@ -65,7 +65,7 @@ struct HomeView: View {
                 )
             }
             .sheet(isPresented: $generatingPassword) {
-                GeneratePasswordView()
+                GeneratePasswordView(useAction: {tempPassword in self.password = tempPassword})
             }
         }
     }
