@@ -16,6 +16,8 @@ class PasswordGenerator {
     static let symbols: String = "@#_-=>|+*[:"
     
     static func invoke(rule: PasswordRule) -> String {
+        precondition((4...20).contains(rule.length), "Password length has to be between 4 and 20.")
+        
         var passwordBuilder = ""
         var allPossibleChars = ""
         if (rule.hasLowerCase) {
@@ -35,10 +37,16 @@ class PasswordGenerator {
             allPossibleChars += symbols
         }
         let numOfRemainingCharacters = rule.length - passwordBuilder.count
-        (0...numOfRemainingCharacters).forEach { _ in
+        (0..<numOfRemainingCharacters).forEach { _ in
             passwordBuilder += String(allPossibleChars.randomElement()!)
         }
         
-        return passwordBuilder
+        return shuffle(passwordBuilder)
+    }
+    
+    private static func shuffle(_ string: String) -> String {
+        var charArray: [Character] = Array(string)
+        let shuffledArray: [Character] = charArray.shuffled()
+        return String(shuffledArray)
     }
 }
