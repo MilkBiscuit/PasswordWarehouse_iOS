@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct KumaTextField: View {
-    
+
     @Binding private var text: String
     private let labelImage: String
     private let title: String
@@ -24,6 +24,7 @@ struct KumaTextField: View {
         LabeledContent {
             TextField("", text: $text)
                 .disableAutocorrection(true)
+                .monospaced()
                 .padding([.leading, .bottom], 8)
         } label: {
             Label(title, systemImage: labelImage)

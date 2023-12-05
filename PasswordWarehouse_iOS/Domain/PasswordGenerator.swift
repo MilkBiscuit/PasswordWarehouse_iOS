@@ -46,7 +46,7 @@ class PasswordGenerator {
     }
     
     private static func shuffle(_ string: String) -> String {
-        var charArray: [Character] = Array(string)
+        let charArray: [Character] = Array(string)
         let shuffledArray: [Character] = charArray.shuffled()
         return String(shuffledArray)
     }

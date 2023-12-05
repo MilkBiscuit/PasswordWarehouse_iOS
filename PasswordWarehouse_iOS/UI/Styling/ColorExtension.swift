@@ -8,9 +8,6 @@
 import SwiftUI
 
 extension Color {
-    static var systemBackground: Color {
-        Color(UIColor.systemBackground)
-    }
     static var lightGray: Color {
         Color(UIColor.lightGray)
     }
@@ -25,5 +22,17 @@ extension Color {
     }
     static var kumaTealLight: Color {
         Color(red: 0, green: 0.592, blue: 0.655, opacity: 0.2)
+    }
+    static var transparentBlack20: Color {
+        Color(red: 0, green: 0, blue: 0, opacity: 0.2)
+    }
+    static var transparentWhite20: Color {
+        Color(red: 1, green: 1, blue: 1, opacity: 0.2)
+    }
+    static var transparent: Color {
+        Color(red: 0, green: 0, blue: 0, opacity: 0)
+    }
+    static var systemBackground: Color {
+        Color(UIColor.systemBackground)
     }
 }

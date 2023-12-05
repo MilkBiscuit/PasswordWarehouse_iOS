@@ -32,16 +32,20 @@ struct GeneratePasswordView: View {
             Toggle("Symbol", isOn: $passwordRule.hasSymbol)
             Stepper("Length:  \(passwordRule.length)", value: $passwordRule.length, in: PasswordGenerator.passwordLenRange)
             Spacer().frame(height: 20)
-            // TODO: use monospace font
-            KumaPasswordField(text: $password)
+            KumaTextField(
+                "Password", labelImage: KumaPasswordField.passwordLabelImage, text: $password
+            )
+            .disabled(true)
 
             Spacer().frame(height: 20)
             Button(action: regenerate) {
                 Label("Generate", systemImage: "arrow.clockwise")
+                    .frame(maxWidth: .infinity)
             }
             Spacer().frame(height: 20)
             Button(action: usePassword) {
                 Text("Use this password")
+                    .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
         }

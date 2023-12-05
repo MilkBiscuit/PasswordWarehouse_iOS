@@ -34,17 +34,22 @@ struct HomeView: View {
                 )
                 KumaTextField(
                     "Account Number / Email / Username", labelImage: "envelope", text: $username
-                ).textInputAutocapitalization(TextInputAutocapitalization.never)
-                KumaPasswordField(text: $password)
+                )
+                .textInputAutocapitalization(TextInputAutocapitalization.never)
+                KumaPasswordField(
+                    text: $password
+                )
+                .textInputAutocapitalization(TextInputAutocapitalization.never)
                 
-                // TODO: Make VStack, increase the width of Store button
                 Spacer().frame(height: 20)
-                Button("Generate Password") {
-                    generatingPassword.toggle()
+                Button(action: {generatingPassword.toggle()}) {
+                    Text("Generate Password")
+                        .frame(maxWidth: .infinity)
                 }
                 Spacer().frame(height: 20)
                 Button(action: storeCredentials) {
                     Label("Store", systemImage: "square.and.arrow.down")
+                        .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
             }

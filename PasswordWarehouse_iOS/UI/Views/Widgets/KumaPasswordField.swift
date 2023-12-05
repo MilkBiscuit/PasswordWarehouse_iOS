@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct KumaPasswordField: View {
+    static let passwordLabelImage: String = "rectangle.and.pencil.and.ellipsis"
+
     private let iconWidth: CGFloat = 44
     private let iconPanelWidth: CGFloat
     private let labelText: String = "Password"
-    private let labelImage: String = "rectangle.and.pencil.and.ellipsis"
 
     @Binding private var password: String
     @State private var isSecured: Bool = false
@@ -26,13 +27,15 @@ struct KumaPasswordField: View {
     
     var body: some View {
         ZStack(alignment: .trailing) {
+            // TODO: visible password to invisible, input text clears all history
             Group {
                 if isSecured {
                     LabeledContent {
                         SecureField(labelText, text: $password)
+                            .monospaced()
                             .padding([.leading, .bottom], 8)
                     } label: {
-                        Label(labelText, systemImage: labelImage)
+                        Label(labelText, systemImage: Self.passwordLabelImage)
                             .font(.caption)
                             .padding([.top, .leading], 8)
                     }
@@ -40,7 +43,7 @@ struct KumaPasswordField: View {
                     .labeledContentStyle(.vertical)
                 } else {
                     KumaTextField(
-                        "Password", labelImage: labelImage, text: $password
+                        "Password", labelImage: Self.passwordLabelImage, text: $password
                     )
                 }
             }.padding(.trailing, iconPanelWidth)

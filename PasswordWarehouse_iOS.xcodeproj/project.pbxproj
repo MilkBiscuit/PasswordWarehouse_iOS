@@ -64,6 +64,7 @@
 		C9C585E12B1DD2FC0036E22E /* PasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C585E02B1DD2FC0036E22E /* PasswordRule.swift */; };
 		C9C585E22B1DD2FC0036E22E /* PasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C585E02B1DD2FC0036E22E /* PasswordRule.swift */; };
 		C9C585E52B1DD8A70036E22E /* PasswordGeneratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C585E32B1DD8A70036E22E /* PasswordGeneratorTest.swift */; };
+		C9D6A9532B1F20E200102D34 /* KumaButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6A9522B1F20E200102D34 /* KumaButtonStyle.swift */; };
 		C9F2B1642B15EB3B003AADF6 /* CenterModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F2B1632B15EB3B003AADF6 /* CenterModifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +139,7 @@
 		C9C585DD2B1DD2720036E22E /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
 		C9C585E02B1DD2FC0036E22E /* PasswordRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRule.swift; sourceTree = "<group>"; };
 		C9C585E32B1DD8A70036E22E /* PasswordGeneratorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorTest.swift; sourceTree = "<group>"; };
+		C9D6A9522B1F20E200102D34 /* KumaButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaButtonStyle.swift; sourceTree = "<group>"; };
 		C9F2B1632B15EB3B003AADF6 /* CenterModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,6 +259,7 @@
 				C9A03E992B09B49F00A42A1F /* ColorExtension.swift */,
 				C9F2B1632B15EB3B003AADF6 /* CenterModifier.swift */,
 				C96A2DD42B1C830A00ABE0D4 /* InnerHeightPreferenceKey.swift */,
+				C9D6A9522B1F20E200102D34 /* KumaButtonStyle.swift */,
 			);
 			path = Styling;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				C9A03E982B09AFBD00A42A1F /* KumaToastView.swift in Sources */,
 				C90CB1862B113EB700A8BC7F /* LumberJack.swift in Sources */,
 				C9A03E9A2B09B49F00A42A1F /* ColorExtension.swift in Sources */,
+				C9D6A9532B1F20E200102D34 /* KumaButtonStyle.swift in Sources */,
 				C9C585E12B1DD2FC0036E22E /* PasswordRule.swift in Sources */,
 				C90CB1812B10B66000A8BC7F /* Resolver.swift in Sources */,
 				C90CB18F2B116FA500A8BC7F /* SearchResultListView.swift in Sources */,
