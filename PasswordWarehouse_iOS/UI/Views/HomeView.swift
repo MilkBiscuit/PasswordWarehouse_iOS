@@ -13,6 +13,8 @@ struct HomeView: View {
     @State private var password: String = ""
     @State private var searchText: String = ""
     @State private var generatingPassword = false
+    @State private var storeButtonText = "Store"
+    @State private var storeButtonDisabled = true
     @State private var navPath = NavigationPath()
     @Environment(\.kumaToastText) var toastText: Binding<String?>
     
@@ -48,9 +50,10 @@ struct HomeView: View {
                 }
                 Spacer().frame(height: 20)
                 Button(action: storeCredentials) {
-                    Label("Store", systemImage: "square.and.arrow.down")
+                    Label(storeButtonText, systemImage: "square.and.arrow.down")
                         .frame(maxWidth: .infinity)
                 }
+                .disabled(storeButtonDisabled)
                 .buttonStyle(.borderedProminent)
             }
             .padding()
@@ -63,6 +66,9 @@ struct HomeView: View {
             .onSubmit(of: .search) {
                 searchCredentials()
             }
+            .onChange(of: website, onWebsiteChange)
+            .onChange(of: username, updateStoreButtonState)
+            .onChange(of: password, updateStoreButtonState)
             .navigationDestination(for: CredentialList.self) { list in
                 SearchResultListView(
                     credentialList: list,
@@ -92,27 +98,39 @@ struct HomeView: View {
             website = results[0].id
             username = results[0].username
             password = results[0].passwordClearText
+            Task {
+                try await Task.sleep(for: .milliseconds(50))
+                storeButtonText = "Update"
+            }
         } else {
             navPath.append(results)
         }
     }
 
     private func storeCredentials() {
-        if website.isEmpty {
-            toastText.wrappedValue = "Website can't be empty."
-            return
-        }
-        if username.isEmpty && password.isEmpty {
-            toastText.wrappedValue = "Username and password can't be both empty."
-            return
-        }
-        
         storeCredentialUC.invoke(
             credential: CredentialItem(id: website, username: username, passwordClearText: password)
         )
         website = ""
         username = ""
         password = ""
+    }
+    
+    private func onWebsiteChange() {
+        storeButtonText = "Store"
+        updateStoreButtonState()
+    }
+    
+    private func updateStoreButtonState() {
+        if website.isEmpty {
+            storeButtonDisabled = true
+            return
+        }
+        if username.isEmpty && password.isEmpty {
+            storeButtonDisabled = true
+            return
+        }
+        storeButtonDisabled = false
     }
 }
 
