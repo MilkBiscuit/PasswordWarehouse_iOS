@@ -13,16 +13,19 @@ struct HomeView: View {
     @State private var password: String = ""
     @State private var searchText: String = ""
     @State private var generatingPassword = false
-    @State private var storeButtonText = "Store"
+    @State private var websiteExists = false
     @State private var storeButtonDisabled = true
+    @State private var confirmingToDelete = false
     @State private var navPath = NavigationPath()
     @Environment(\.kumaToastText) var toastText: Binding<String?>
     
     @Inject
-    private var storeCredentialUC: StoreCredentialUC
+    private var removeCredentialUC: RemoveCredentialUC
     @Inject
     private var searchCredentialUC: SearchCredentialUC
-    
+    @Inject
+    private var storeCredentialUC: StoreCredentialUC
+
     var body: some View {
         NavigationStack(path: $navPath) {
             VStack(spacing: 1) {
@@ -50,11 +53,26 @@ struct HomeView: View {
                 }
                 Spacer().frame(height: 20)
                 Button(action: storeCredentials) {
-                    Label(storeButtonText, systemImage: "square.and.arrow.down")
-                        .frame(maxWidth: .infinity)
+                    Label(
+                        websiteExists ? "Update": "Store",
+                        systemImage: "square.and.arrow.down"
+                    )
+                    .frame(maxWidth: .infinity)
                 }
                 .disabled(storeButtonDisabled)
                 .buttonStyle(.borderedProminent)
+                if websiteExists {
+                    Spacer().frame(height: 20)
+                    Button(role: .destructive, action: { confirmingToDelete = true }) {
+                        Image(systemName: "trash")
+                    }
+                    .confirmationDialog("Are you sure?", isPresented: $confirmingToDelete) {
+                        Button("Delete this password", role: .destructive) {
+                            removeCredential()
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                }
             }
             .padding()
             .navigationBarTitleDisplayMode(.inline)
@@ -80,10 +98,28 @@ struct HomeView: View {
             }
         }
     }
+    
+    private func clearForm() {
+        self.website = ""
+        self.username = ""
+        self.password = ""
+    }
 
     private func copyToClipboard(_ content: String) {
         UIPasteboard.general.string = content
         toastText.wrappedValue = "Copied to clipboard"
+    }
+    
+    private func onWebsiteChange() {
+        websiteExists = false
+        updateStoreButtonState()
+    }
+    
+    private func removeCredential() {
+        Task {
+            let removeSuccess = await removeCredentialUC.invoke(website: self.website)
+            if removeSuccess { clearForm() }
+        }
     }
     
     private func searchCredentials() {
@@ -100,7 +136,7 @@ struct HomeView: View {
             password = results[0].passwordClearText
             Task {
                 try await Task.sleep(for: .milliseconds(50))
-                storeButtonText = "Update"
+                websiteExists = true
             }
         } else {
             navPath.append(results)
@@ -111,14 +147,7 @@ struct HomeView: View {
         storeCredentialUC.invoke(
             credential: CredentialItem(id: website, username: username, passwordClearText: password)
         )
-        website = ""
-        username = ""
-        password = ""
-    }
-    
-    private func onWebsiteChange() {
-        storeButtonText = "Store"
-        updateStoreButtonState()
+        clearForm()
     }
     
     private func updateStoreButtonState() {

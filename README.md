@@ -1,5 +1,5 @@
 #  Password Bin
 
 ## TODO List
-1. Allow to delete credentials
-
+1. FaceId
+2. Save the password rule preference

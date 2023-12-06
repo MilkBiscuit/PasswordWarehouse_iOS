@@ -27,7 +27,6 @@ struct KumaPasswordField: View {
     
     var body: some View {
         ZStack(alignment: .trailing) {
-            // TODO: visible password to invisible, input text clears all history
             Group {
                 if isSecured {
                     LabeledContent {

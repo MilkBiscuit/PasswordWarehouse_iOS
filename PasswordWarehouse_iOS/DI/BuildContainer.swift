@@ -25,11 +25,14 @@ func buildContainer() -> Container {
     container.register(ImportCredentialsUC.self) { _  in
         return ImportCredentialsUC()
     }.inObjectScope(.container)
-    container.register(StoreCredentialUC.self) { _  in
-        return StoreCredentialUC()
+    container.register(RemoveCredentialUC.self) { _  in
+        return RemoveCredentialUC()
     }.inObjectScope(.container)
     container.register(SearchCredentialUC.self) { _  in
         return SearchCredentialUC()
+    }.inObjectScope(.container)
+    container.register(StoreCredentialUC.self) { _  in
+        return StoreCredentialUC()
     }.inObjectScope(.container)
 
     return container

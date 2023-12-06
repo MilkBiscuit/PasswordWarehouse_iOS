@@ -28,6 +28,7 @@
 		C90CB19C2B11D22F00A8BC7F /* CipherBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB1872B11426900A8BC7F /* CipherBook.swift */; };
 		C90CB19E2B129FB600A8BC7F /* KumaPreferenceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB19D2B129FB600A8BC7F /* KumaPreferenceItem.swift */; };
 		C90CB1A02B13410F00A8BC7F /* KumaTogglePreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CB19F2B13410E00A8BC7F /* KumaTogglePreference.swift */; };
+		C949144F2B20725000CF0B86 /* RemoveCredentialUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C949144E2B20725000CF0B86 /* RemoveCredentialUC.swift */; };
 		C95AA60E2B19CA020017F8F6 /* DecryptTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95AA60D2B19CA020017F8F6 /* DecryptTest.swift */; };
 		C95AA6102B1A4D340017F8F6 /* KumaTextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95AA60F2B1A4D340017F8F6 /* KumaTextFieldAlert.swift */; };
 		C95AA6122B1A5EED0017F8F6 /* TypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95AA6112B1A5EED0017F8F6 /* TypeExtension.swift */; };
@@ -104,6 +105,7 @@
 		C90CB1992B11CEDC00A8BC7F /* SensitiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensitiveData.swift; sourceTree = "<group>"; };
 		C90CB19D2B129FB600A8BC7F /* KumaPreferenceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaPreferenceItem.swift; sourceTree = "<group>"; };
 		C90CB19F2B13410E00A8BC7F /* KumaTogglePreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaTogglePreference.swift; sourceTree = "<group>"; };
+		C949144E2B20725000CF0B86 /* RemoveCredentialUC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveCredentialUC.swift; sourceTree = "<group>"; };
 		C95AA60D2B19CA020017F8F6 /* DecryptTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecryptTest.swift; sourceTree = "<group>"; };
 		C95AA60F2B1A4D340017F8F6 /* KumaTextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KumaTextFieldAlert.swift; sourceTree = "<group>"; };
 		C95AA6112B1A5EED0017F8F6 /* TypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeExtension.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				C90CB1822B10B7E600A8BC7F /* StoreCredentialUC.swift */,
+				C949144E2B20725000CF0B86 /* RemoveCredentialUC.swift */,
 				C9C4ABC12B190BEE00408786 /* ExportCredentialsUC.swift */,
 				C9C4ABC32B19124500408786 /* ImportCredentialsUC.swift */,
 				C90CB1892B1142BE00A8BC7F /* SearchCredentialUC.swift */,
@@ -537,6 +540,7 @@
 				C9A03E912B096A6B00A42A1F /* VerticalLabeledContentStyle.swift in Sources */,
 				C90CB19A2B11CEDC00A8BC7F /* SensitiveData.swift in Sources */,
 				C9A03E982B09AFBD00A42A1F /* KumaToastView.swift in Sources */,
+				C949144F2B20725000CF0B86 /* RemoveCredentialUC.swift in Sources */,
 				C90CB1862B113EB700A8BC7F /* LumberJack.swift in Sources */,
 				C9A03E9A2B09B49F00A42A1F /* ColorExtension.swift in Sources */,
 				C9D6A9532B1F20E200102D34 /* KumaButtonStyle.swift in Sources */,

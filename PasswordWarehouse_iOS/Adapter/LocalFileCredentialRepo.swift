@@ -39,8 +39,8 @@ class LocalFileCredentialRepo: ICredentialRepository {
         return 0
     }
 
-    func remove(credential: EncryptedCredentialItem) async -> Bool {
-        guard cachedBook.removeValue(forKey: credential.id) != nil
+    func remove(credentialId: String) async -> Bool {
+        guard cachedBook.removeValue(forKey: credentialId) != nil
         else {
             return false
         }
