@@ -21,11 +21,11 @@ struct ImportCredentialsUC {
             return 0
         }
         fileUrl.stopAccessingSecurityScopedResource()
-        guard let cipherBook = try? JSONDecoder().decode(CipherBook.self, from: fileData) else {
+        guard let cipherArray = try? JSONDecoder().decode(CipherArray.self, from: fileData) else {
             return 0
         }
         
-        for (_, value) in cipherBook {
+        for value in cipherArray {
             guard let clearPasswordItem = Decrypt.decrypt(item: value, with: masterPassword) else {
                 print("The password is wrong, can not import!")
 
@@ -35,8 +35,8 @@ struct ImportCredentialsUC {
             let encryptedItem = Encrypt.encrypt(item: clearPasswordItem, with: SensitiveData.defaultMasterPassword)
             let _ = await credentialRepo.save(credential: encryptedItem)
         }
-        print("I imported \(cipherBook.count)")
+        print("I imported \(cipherArray.count)")
         
-        return cipherBook.count
+        return cipherArray.count
     }
 }

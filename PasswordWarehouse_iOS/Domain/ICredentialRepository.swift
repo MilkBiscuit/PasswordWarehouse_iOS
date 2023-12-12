@@ -10,7 +10,7 @@
 import Foundation
 
 protocol ICredentialRepository {
-    func exportAllCredentials() async -> CipherBook?
+    func exportAllCredentials() async -> CipherArray?
     func importCredentials() async -> Int
     func remove(credentialId: String) async -> Bool
     func save(credential: EncryptedCredentialItem) async -> Bool

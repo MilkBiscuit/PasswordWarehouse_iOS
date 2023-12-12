@@ -14,23 +14,24 @@ struct ExportCredentialsUC {
     private var credentialRepo: ICredentialRepository
 
     func invoke(masterPassword: String) async -> String? {
-        guard let cipherBook = await credentialRepo.exportAllCredentials() else {
+        guard let cipherArray = await credentialRepo.exportAllCredentials() else {
             return nil
         }
-        var newCipherBook = CipherBook()
-        for (key, value) in cipherBook {
+        var newCipherArray = CipherArray()
+        for item in cipherArray {
             guard let clearPasswordItem = Decrypt.decrypt(
-                item: value, with: SensitiveData.defaultMasterPassword
+                item: item, with: SensitiveData.defaultMasterPassword
             ) else {
                 print("Password does not match, export failed!")
                 return nil
             }
 
             let encryptedItem = Encrypt.encrypt(item: clearPasswordItem, with: masterPassword)
-            newCipherBook[key] = encryptedItem
+            newCipherArray.append(encryptedItem)
         }
+        newCipherArray = newCipherArray.sorted { $0.id < $1.id }
         do {
-            let data = try JSONEncoder().encode(newCipherBook)
+            let data = try JSONEncoder().encode(newCipherArray)
 
             return String(decoding: data, as: UTF8.self)
         } catch {

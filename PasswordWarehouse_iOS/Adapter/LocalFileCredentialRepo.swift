@@ -27,12 +27,12 @@ class LocalFileCredentialRepo: ICredentialRepository {
         return PersistentFileHelper.fileURL(fileName: "credentials.json")
     }
     
-    func exportAllCredentials() async -> CipherBook? {
+    func exportAllCredentials() async -> CipherArray? {
         if (cachedBook.isEmpty) {
             return nil
         }
         
-        return cachedBook
+        return cachedBook.map { $0.value }
     }
     
     func importCredentials() async -> Int {

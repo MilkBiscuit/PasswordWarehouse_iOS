@@ -10,3 +10,4 @@
 import Foundation
 
 typealias CipherBook = [String: EncryptedCredentialItem]
+typealias CipherArray = [EncryptedCredentialItem]
